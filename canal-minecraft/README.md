@@ -1,10 +1,30 @@
 # BLOQUE A BLOQUE · Canal de Minecraft en español
 
-Canal de YouTube sobre Minecraft con **2 vídeos nuevos al día**. Cada vídeo trae guion, voz en off, animaciones, gráficos en pixel art, música, efectos de sonido, subtítulos, miniatura, título, descripción con capítulos y etiquetas.
+Canal de Minecraft con **2 Shorts nuevos al día** (YouTube Shorts, TikTok, Reels). Cada Short trae guion, voz en off, animaciones, gráficos en pixel art, música, efectos de sonido, subtítulos grandes, portada, título, descripción y etiquetas.
+
+## Shorts (formato principal)
+Vídeo vertical de 1080x1920 que dura menos de 60 s. El diseño respeta las zonas de la app: arriba y abajo van los textos de YouTube y a la derecha los botones.
+
+| # | Publicar | Título | Duración |
+|---|---|---|---|
+| 001 | 17/11 14:00 | La NUEVA actualización de Minecraft da MIEDO 🥶 | 41 s |
+| 002 | 17/11 19:00 | Así encuentras DIAMANTES en Minecraft (la capa EXACTA) 💎 | 38 s |
+| 003 | 18/11 14:00 | Los 5 MEJORES encantamientos de Minecraft (el nº 1 no sale en la mesa) ✨ | 37 s |
+| 004 | 18/11 19:00 | Cómo conseguir REPARACIÓN fácil en Minecraft (truco del atril) 📚 | 32 s |
+
+- `shorts/NNN-....mp4`: el Short listo para subir.
+- `shorts/metadatos/NNN-....txt`: título (con #shorts), descripción, etiquetas y hora de publicación.
+- `shorts/portadas/` y `shorts/subtitulos/`: portada y subtítulos SRT.
+
+**Subir un Short:** desde la app de YouTube (botón + → Short → elegir el vídeo), o desde YouTube Studio en el ordenador, porque un vídeo vertical de menos de 3 minutos se publica como Short automáticamente. Copia el título y la descripción del TXT. Marca "Contenido alterado o sintético: Sí". El mismo archivo sirve para TikTok e Instagram Reels.
+
+## Vídeos largos (16:9)
+Además hay versiones horizontales más largas (2-2:30 min) de los mismos temas, por si quieres usarlas en el canal principal.
 
 ```
 canal-minecraft/
-├── videos/        ← MP4 listos para subir (1920x1080, 30 fps, H.264 + AAC, -14 LUFS)
+├── shorts/        ← SHORTS verticales (1080x1920) + metadatos, portadas y subtítulos
+├── videos/        ← vídeos largos horizontales (1920x1080, 30 fps, H.264 + AAC, -14 LUFS)
 ├── miniaturas/    ← JPG de 1280x720
 ├── subtitulos/    ← SRT en español (súbelos como subtítulos en YouTube)
 ├── metadatos/     ← un TXT por vídeo: título, descripción, capítulos y etiquetas para copiar y pegar
@@ -63,7 +83,9 @@ canal-minecraft/
 pip install kokoro-onnx soundfile scipy pillow numpy
 # modelo de voz en /home/user/tts (ver PRODUCCION.md)
 cd src
-python3 render.py 002          # vuelve a montar el vídeo 002
+python3 render_short.py 002    # vuelve a montar el Short 002 (guion en src/shorts/)
+python3 branding.py shorts 002 # metadatos del Short 002
+python3 render.py 002          # vuelve a montar el vídeo largo 002
 python3 branding.py 002        # miniatura y metadatos del 002
 python3 branding.py canal      # banner, avatar y descripción del canal
 ```

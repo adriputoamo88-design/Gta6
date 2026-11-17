@@ -1,0 +1,30 @@
+# -*- coding: utf-8 -*-
+# Short de noticia. Fuentes y comprobaciones: ver src/videos/001-the-deep-freeze-novedades.py (17/11/2026).
+SHORT = dict(
+    slug="001-the-deep-freeze",
+    date="2026-11-17",
+    theme="hielo",
+    title="La NUEVA actualización de Minecraft da MIEDO 🥶 #minecraft #shorts",
+    desc="The Deep Freeze: cuevas de hielo, carámbanos que caen, hielo que se rompe bajo tus pies y el Frostbite, un zombi congelado. Todavía sin fecha de salida.",
+    tags=["minecraft", "minecraft the deep freeze", "minecraft 26.4", "minecraft actualizacion", "cuevas de hielo", "frostbite minecraft", "minecraft shorts", "minecraft español"],
+    hashtags="#minecraft #shorts #minecraftespañol #thedeepfreeze",
+    scenes=[
+        dict(t="title", h="NUEVA ACTUALIZACIÓN", badge="NOTICIA", splash="¡Brrr!", hero=("cube", "packed_ice"),
+             say="Minecraft acaba de anunciar su próxima actualización, y da miedo. Se llama The Deep Freeze."),
+        dict(t="card", badge="NUEVO BIOMA", h="CUEVAS DE HIELO", s="Hielo compacto, calcita, nieve… y lava", hero=("cube", "packed_ice"),
+             say="Trae cuevas de hielo bajo tierra, hechas de hielo compacto y calcita. Y ojo, que dentro también hay lava."),
+        dict(t="card", badge="PELIGRO", h="CARÁMBANOS", s="Pueden caer y hacerte daño", hero=("sprite", "icicle"),
+             say="Del techo cuelgan carámbanos que pueden caer y hacerte daño."),
+        dict(t="card", warn=True, h="HIELO QUEBRADIZO", s="Se agrieta al pisarlo… y se rompe", hero=("cube", "ice"), glowcol=(140, 210, 255),
+             say="Y hay un hielo quebradizo que se agrieta al pisarlo, hasta que se rompe bajo tus pies."),
+        dict(t="mob", name="FROSTBITE", sprite="frostbite", note="Ilustración del canal, no es el diseño oficial",
+             s="Un zombi congelado que lanza bolas de hielo",
+             say="El nuevo enemigo es el Frostbite, un zombi congelado. Sus golpes te congelan, y desde lejos te lanza bolas de hielo."),
+        dict(t="bullets", h="Y ADEMÁS",
+             items=[(("cube", "ice_bricks"), "Ladrillos de hielo compacto"), (("cube", "snow_bricks"), "Ladrillos de nieve"),
+                    (("cube", "calcite"), "Bloques de calcita"), (("sprite", "disc"), "Listas en los tocadiscos")],
+             say="Además llegan ladrillos de hielo compacto, ladrillos de nieve, bloques de calcita y listas de reproducción en los tocadiscos."),
+        dict(t="card", h="¿CUÁNDO SALE?", s="Sin fecha oficial todavía", hero=("sprite", "hourglass"),
+             say="¿Cuándo sale? Todavía no hay fecha, pero ya se puede probar en las versiones de prueba. Sígueme para enterarte el primero."),
+    ],
+)

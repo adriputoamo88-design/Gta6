@@ -1,6 +1,6 @@
 # Lista de temas · BLOQUE A BLOQUE
 
-Cada día salen **2 vídeos**: normalmente una **guía o truco** y un vídeo de **novedades o curiosidades**.
+Cada día salen **2 Shorts**: normalmente una **guía o truco** y un vídeo de **novedades o curiosidades**.
 Si hay una noticia importante ese día (fecha de salida, nueva snapshot, Minecraft Live…), la noticia pasa por delante.
 
 Marca con `[x]` lo publicado y pon el número del vídeo.

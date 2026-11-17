@@ -29,3 +29,15 @@ def _load():
 
 
 VIDEOS = _load()
+
+
+def _load_shorts():
+    out = []
+    for p in sorted(glob.glob(os.path.join(HERE, "shorts", "[0-9]*.py"))):
+        spec = importlib.util.spec_from_file_location("short_" + os.path.basename(p)[:-3].replace("-", "_"), p)
+        m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+        out.append(m.SHORT)
+    return out
+
+
+SHORTS = _load_shorts()   # Shorts verticales: src/shorts/NNN-slug.py (dict SHORT)

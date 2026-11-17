@@ -561,33 +561,34 @@ def terrain_strip(period, B, base_y, amp, seed, trees=True, hcount=None):
 
 
 class Background:
-    def __init__(self, theme, seed=1):
+    def __init__(self, theme, seed=1, w=W, h=H):
+        self.w, self.h = w, h
         self.theme = theme; self.seed = seed; rnd = random.Random(seed)
         self.parts = []
         if theme in ("superficie", "noche"):
             night = theme == "noche"
-            sky = vgrad(W, H, [(14, 18, 52), (34, 40, 96), (70, 60, 120)] if night else [(84, 140, 240), (138, 186, 255), (200, 226, 255)])
+            sky = vgrad(self.w, self.h, [(14, 18, 52), (34, 40, 96), (70, 60, 120)] if night else [(84, 140, 240), (138, 186, 255), (200, 226, 255)])
             self.base = sky.convert("RGBA")
             d = ImageDraw.Draw(self.base)
             if night:
                 for _ in range(220):
-                    x, y = rnd.randint(0, W), rnd.randint(0, 620); s = rnd.choice([3, 3, 4, 6])
+                    x, y = rnd.randint(0, self.w), rnd.randint(0, 620); s = rnd.choice([3, 3, 4, 6])
                     d.rectangle([x, y, x + s, y + s], fill=(255, 255, 255, rnd.randint(120, 255)))
-                mx, my = 1460, 120
+                mx, my = int(self.w * 0.76), 120
                 d.rectangle([mx, my, mx + 130, my + 130], fill=(236, 236, 214, 255))
                 for (a, b, s) in [(20, 30, 26), (80, 70, 20), (40, 90, 16)]:
                     d.rectangle([mx + a, my + b, mx + a + s, my + b + s], fill=(200, 200, 182, 255))
             else:
                 sun = Image.new("RGBA", (180, 180), (255, 246, 160, 255)); ImageDraw.Draw(sun).rectangle([30, 30, 150, 150], fill=(255, 255, 220, 255))
-                sun = add_glow(sun, (255, 240, 150), 40, 0.8); self.base.alpha_composite(sun, (1400 - 40, 70 - 80))
+                sun = add_glow(sun, (255, 240, 150), 40, 0.8); self.base.alpha_composite(sun, (int(self.w * 0.73) - 40, 70 - 80))
             fogc = (60, 60, 120) if night else (170, 205, 255)
-            far = terrain_strip(W * 2, 40, 7, 3, seed + 1, trees=True, hcount=14)
+            far = terrain_strip(self.w * 2, 40, 7, 3, seed + 1, trees=True, hcount=14)
             self.far = _tint(far, fogc, 0.55 if not night else 0.62)
-            near = terrain_strip(W * 2, 72, 4, 2, seed + 2, trees=True, hcount=10)
+            near = terrain_strip(self.w * 2, 72, 4, 2, seed + 2, trees=True, hcount=10)
             self.near = _tint(near, (10, 10, 40), 0.35) if night else near
-            self.clouds = Image.new("RGBA", (W * 2, 300), (0, 0, 0, 0)); cd = ImageDraw.Draw(self.clouds)
+            self.clouds = Image.new("RGBA", (self.w * 2, 300), (0, 0, 0, 0)); cd = ImageDraw.Draw(self.clouds)
             for _ in range(14):
-                cx, cy = rnd.randint(0, W * 2 - 400), rnd.randint(20, 220)
+                cx, cy = rnd.randint(0, self.w * 2 - 400), rnd.randint(20, 220)
                 for _ in range(rnd.randint(2, 4)):
                     w_, h_ = rnd.randint(4, 9) * 24, rnd.randint(2, 3) * 24; ox = rnd.randint(-3, 3) * 24
                     cd.rectangle([cx + ox, cy, cx + ox + w_, cy + h_], fill=(255, 255, 255, 120 if night else 215))
@@ -596,16 +597,16 @@ class Background:
             ice = theme == "hielo"
             B = 96
             names = (["packed_ice"] * 6 + ["ice"] * 2 + ["snow", "calcite"]) if ice else (["stone"] * 7 + ["deepslate"] * 4 + ["coal_ore", "iron_ore", "deep_diamond_ore", "gold_ore", "redstone_ore"])
-            wall = Image.new("RGBA", (W + B * 8, H + B), (0, 0, 0, 255))
-            for y in range(0, H + B, B):
-                for x in range(0, W + B * 8, B):
+            wall = Image.new("RGBA", (self.w + B * 8, self.h + B), (0, 0, 0, 255))
+            for y in range(0, self.h + B, B):
+                for x in range(0, self.w + B * 8, B):
                     wall.alpha_composite(tile(rnd.choice(names), B).convert("RGBA"), (x, y))
             # oscurecer con viñeta y luz cálida/fría
             dark = Image.new("RGBA", wall.size, ((6, 14, 30) if ice else (6, 6, 10)) + (150 if ice else 175,))
             wall.alpha_composite(dark)
             light = Image.new("L", wall.size, 0); ld = ImageDraw.Draw(light)
             for _ in range(6):
-                x, y = rnd.randint(0, wall.width), rnd.randint(100, H)
+                x, y = rnd.randint(0, wall.width), rnd.randint(100, self.h)
                 r = rnd.randint(220, 380); ld.ellipse([x - r, y - r, x + r, y + r], fill=90 if ice else 110)
             light = light.filter(ImageFilter.GaussianBlur(120))
             lc = Image.new("RGBA", wall.size, (120, 200, 255) if ice else (255, 150, 60)); lc.putalpha(light)
@@ -614,55 +615,55 @@ class Background:
             self.mode = "ice" if ice else "cave"
             # carámbanos arriba / resplandor de lava abajo
             if ice:
-                self.top = Image.new("RGBA", (W * 2, 260), (0, 0, 0, 0))
-                for x in range(0, W * 2, 60):
+                self.top = Image.new("RGBA", (self.w * 2, 260), (0, 0, 0, 0))
+                for x in range(0, self.w * 2, 60):
                     if rnd.random() < 0.6:
                         s = sprite("icicle", rnd.choice([60, 72, 90, 120]))
                         self.top.alpha_composite(s, (x + rnd.randint(-10, 10), -rnd.randint(0, 20) if False else 0))
-                self.crystals = [(rnd.randint(40, W - 120), rnd.randint(500, H - 150), rnd.choice([60, 80, 100]), rnd.random() * 6) for _ in range(9)]
+                self.crystals = [(rnd.randint(40, self.w - 120), rnd.randint(500, self.h - 150), rnd.choice([60, 80, 100]), rnd.random() * 6) for _ in range(9)]
                 self.cry = {s: add_glow(sprite("crystal", s), (120, 220, 255), 18, 1.2) for s in (60, 80, 100)}
             else:
-                self.lava = Image.new("RGBA", (W * 2, 96), (0, 0, 0, 0))
-                for x in range(0, W * 2, 48): self.lava.alpha_composite(tile("lava", 48).convert("RGBA"), (x, 48)); self.lava.alpha_composite(tile("lava", 48).convert("RGBA"), (x, 0))
-                gl = Image.new("RGBA", (W, 420), (0, 0, 0, 0))
-                ga = vgrad(1, 420, [(0, 0, 0), (255, 255, 255)]).convert("L").resize((W, 420))
-                g2 = Image.new("RGBA", (W, 420), (255, 110, 20, 0)); g2.putalpha(ga.point(lambda v: int(v * 0.42)))
+                self.lava = Image.new("RGBA", (self.w * 2, 96), (0, 0, 0, 0))
+                for x in range(0, self.w * 2, 48): self.lava.alpha_composite(tile("lava", 48).convert("RGBA"), (x, 48)); self.lava.alpha_composite(tile("lava", 48).convert("RGBA"), (x, 0))
+                gl = Image.new("RGBA", (self.w, 420), (0, 0, 0, 0))
+                ga = vgrad(1, 420, [(0, 0, 0), (255, 255, 255)]).convert("L").resize((self.w, 420))
+                g2 = Image.new("RGBA", (self.w, 420), (255, 110, 20, 0)); g2.putalpha(ga.point(lambda v: int(v * 0.42)))
                 self.lava_glow = g2
-        self.parts = [(rnd.random() * W, rnd.random() * H, rnd.uniform(0.3, 1.0), rnd.choice([4, 6, 8])) for _ in range(70)]
+        self.parts = [(rnd.random() * self.w, rnd.random() * self.h, rnd.uniform(0.3, 1.0), rnd.choice([4, 6, 8])) for _ in range(70)]
 
     def frame(self, t):
         if self.mode == "sky":
             im = self.base.copy()
-            c = crop_wrap(self.clouds, int(t * 18), W); im.alpha_composite(c, (0, 0))
-            f = crop_wrap(self.far, int(t * 12), W); im.alpha_composite(f, (0, H - f.height + 40))
-            n = crop_wrap(self.near, int(t * 34), W); im.alpha_composite(n, (0, H - n.height + 300))
+            c = crop_wrap(self.clouds, int(t * 18), self.w); im.alpha_composite(c, (0, 0))
+            f = crop_wrap(self.far, int(t * 12), self.w); im.alpha_composite(f, (0, self.h - f.height + 40))
+            n = crop_wrap(self.near, int(t * 34), self.w); im.alpha_composite(n, (0, self.h - n.height + 300))
             if self.theme == "noche":
                 d = ImageDraw.Draw(im)
                 for (x, y, sp, s) in self.parts[:25]:
-                    yy = (y * 0.5 + 520 + math.sin(t * sp * 2 + x) * 30); xx = (x + t * 20 * sp) % W
+                    yy = (y * 0.5 + 520 + math.sin(t * sp * 2 + x) * 30); xx = (x + t * 20 * sp) % self.w
                     a = int(140 + 110 * math.sin(t * 3 * sp + x))
                     d.rectangle([xx, yy, xx + s, yy + s], fill=(200, 255, 120, max(0, a)))
             return im.convert("RGB")
-        off = int(t * 16) % (self.wall.width - W)
+        off = int(t * 16) % (self.wall.width - self.w)
         oy = int(30 + math.sin(t * 0.25) * 30)
-        im = self.wall.crop((off, oy, off + W, oy + H)).copy()
+        im = self.wall.crop((off, oy, off + self.w, oy + self.h)).copy()
         d = ImageDraw.Draw(im)
         if self.mode == "ice":
-            top = crop_wrap(self.top, int(t * 16), W); im.alpha_composite(top, (0, 0))
+            top = crop_wrap(self.top, int(t * 16), self.w); im.alpha_composite(top, (0, 0))
             for (x, y, s, ph) in self.crystals:
                 g = self.cry[s]; k = 0.6 + 0.4 * math.sin(t * 2 + ph)
                 gg = g.copy(); gg.putalpha(g.getchannel("A").point(lambda v, k=k: int(v * k)))
                 im.alpha_composite(gg, (int(x - (off % 400) * 0) - g.width // 2, y - g.height // 2))
             for (x, y, sp, s) in self.parts:
-                yy = (y + t * 60 * sp) % H; xx = (x + math.sin(t * sp + y) * 30) % W
+                yy = (y + t * 60 * sp) % self.h; xx = (x + math.sin(t * sp + y) * 30) % self.w
                 d.rectangle([xx, yy, xx + s, yy + s], fill=(255, 255, 255, int(150 * sp)))
         else:
-            lv = crop_wrap(self.lava, int(t * 10), W); im.alpha_composite(lv, (0, H - 96))
+            lv = crop_wrap(self.lava, int(t * 10), self.w); im.alpha_composite(lv, (0, self.h - 96))
             k = 0.8 + 0.2 * math.sin(t * 2.2)
             g = self.lava_glow.copy(); g.putalpha(self.lava_glow.getchannel("A").point(lambda v: int(v * k)))
-            im.alpha_composite(g, (0, H - 420 - 60))
+            im.alpha_composite(g, (0, self.h - 420 - 60))
             for (x, y, sp, s) in self.parts:
-                yy = (y - t * 30 * sp) % H; xx = (x + math.sin(t * sp + y) * 20) % W
+                yy = (y - t * 30 * sp) % self.h; xx = (x + math.sin(t * sp + y) * 20) % self.w
                 d.rectangle([xx, yy, xx + s // 2 + 1, yy + s // 2 + 1], fill=(255, 190, 90, int(160 * sp)))
         return im.convert("RGB")
 

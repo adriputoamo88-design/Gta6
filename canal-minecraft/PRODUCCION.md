@@ -1,8 +1,8 @@
-# Producción diaria: 2 vídeos al día
+# Producción diaria: 2 Shorts al día
 
-Este es el proceso que se sigue cada día para sacar los 2 vídeos. Sirve igual si lo hace Claude con la tarea programada o si lo haces tú a mano.
+Este es el proceso que se sigue cada día para sacar los 2 Shorts. Sirve igual si lo hace Claude con la tarea programada o si lo haces tú a mano.
 
-**Tarea programada:** se ejecuta cada día a las 8:41 (hora de España) y prepara los 2 vídeos **del día siguiente**. Así siempre tienes un día de margen para revisarlos y programarlos.
+**Tarea programada:** se ejecuta cada día a las 8:41 (hora de España) y prepara los 2 Shorts **del día siguiente**. Así siempre tienes un día de margen para revisarlos y programarlos.
 
 ## 0. Preparar el entorno (solo si el contenedor es nuevo)
 ```bash
@@ -16,7 +16,16 @@ curl -sSLO https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-f
 1. Busca novedades de Minecraft de las últimas 24-48 h (snapshots, Preview de Bedrock, anuncios de Mojang). Si hay algo importante, uno de los dos vídeos es la noticia.
 2. El resto sale de `temas.md`, en orden. Alterna guía y noticia o curiosidad.
 
-## 2. Escribir el guion
+## 2. Escribir el guion del Short (formato principal)
+- Un archivo por Short: `src/shorts/NNN-slug.py` (dict `SHORT`). Copia uno existente.
+- Pon las fuentes en un comentario. **Nada inventado**: lo que no esté confirmado se dice como tal. Las palabras en inglés se pronuncian según `PRON` (`src/audio.py`).
+- **Duración: 30-50 s** (6-8 escenas de una o dos frases). La primera frase es el gancho: un error común, una promesa o un dato que sorprenda.
+- Plantillas: `title`, `card`, `tip`, `stat`, `bullets`, `vs`, `mob`, `hotbar`, `ylevel`, `branch`. Opciones: `warn=True` (franjas de peligro) y `glint=True` (brillo de encantamiento).
+- La última frase termina con "Sígueme…": el botón «¡Sígueme!» aparece solo al final.
+- Título de 100 caracteres como máximo, con un emoji, `#minecraft #shorts`.
+- Renderizar: `python3 render_short.py NNN NNN` y `python3 branding.py shorts NNN NNN`.
+
+## 2b. Vídeo largo (opcional)
 - Un archivo por vídeo: `src/videos/NNN-slug.py`. Copia uno existente como plantilla y sigue la numeración.
 - Al principio del archivo, en un comentario, pon las fuentes y la fecha en que se comprobó la información.
 - **Nada inventado.** Lo que solo se ha visto en versiones de prueba se dice como tal ("en las snapshots…"). Si un dato no se puede comprobar, no entra.
@@ -26,7 +35,7 @@ curl -sSLO https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-f
   - Visuales disponibles: cubos `("cube", "textura")` y sprites `("sprite", "nombre")`. Puedes ver la lista en `src/art.py` (`tex()` y `SPRITE_MAPS`).
 - Termina siempre con una escena `outro` que haga una pregunta para los comentarios + `OUTRO`.
 
-## 3. Renderizar
+## 3. Renderizar el vídeo largo (opcional)
 ```bash
 cd src
 python3 render.py NNN NNN      # vídeo(s) en videos/, subtítulos en subtitulos/
@@ -41,7 +50,7 @@ Tarda unos 5-8 minutos por vídeo. Puedes lanzar los dos a la vez.
 
 ## 5. Entregar
 - Marca los temas como publicados en `temas.md`.
-- Haz commit y push de: `src/videos/`, `videos/`, `miniaturas/`, `subtitulos/`, `metadatos/` y `temas.md`.
+- Haz commit y push de: `src/shorts/`, `shorts/` (vídeos, portadas, subtítulos y metadatos) y `temas.md`.
 
 ## Horario de publicación recomendado (España)
 | Vídeo | Hora | Por qué |

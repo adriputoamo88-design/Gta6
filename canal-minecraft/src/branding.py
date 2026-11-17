@@ -134,9 +134,36 @@ def all_metadata():
     json.dump(sorted(old.values(), key=lambda x: x["slug"]), open(p, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
 
+SHORT_FOOTER = """
+🔔 Sígueme: 2 Shorts nuevos de Minecraft cada día.
+Canal no oficial. Minecraft es una marca de Mojang Synergies AB / Microsoft. Gráficos, música y voz de creación propia.
+
+{hashtags}"""
+
+
+def short_metadata(want=()):
+    from content import SHORTS
+    sm = os.path.join(ROOT, "shorts", "metadatos"); os.makedirs(sm, exist_ok=True)
+    for i, v in enumerate(SHORTS):
+        if want and not any(v["slug"].startswith(a) for a in want): continue
+        mp = os.path.join(ROOT, "build", f"short-{v['slug']}-meta.json")
+        if not os.path.exists(mp): continue
+        m = json.load(open(mp))
+        n = int(v["slug"][:3]); hora = "14:00" if n % 2 == 1 else "19:00"
+        dd = "/".join(reversed(v["date"].split("-")))
+        desc = v["desc"] + "\n" + SHORT_FOOTER.format(hashtags=v["hashtags"])
+        txt = (f"TÍTULO (máx. 100 caracteres):\n{v['title']}\n\nDESCRIPCIÓN:\n{desc}\n\nETIQUETAS:\n{', '.join(v['tags'])}\n\n"
+               f"PUBLICAR: {dd} a las {hora}\nARCHIVOS:\n  short: shorts/{v['slug']}.mp4\n  portada: shorts/portadas/{v['slug']}.jpg\n"
+               f"  subtítulos: shorts/subtitulos/{v['slug']}.srt\nDURACIÓN: {m['duration']:.0f} s\n"
+               "CONFIGURACIÓN: Idioma: Español · No es contenido para niños · Contenido alterado o sintético: SÍ (voz generada por IA)\n")
+        open(os.path.join(sm, v["slug"] + ".txt"), "w", encoding="utf-8").write(txt)
+
+
 if __name__ == "__main__":
     args = sys.argv[1:]
-    if args == ["canal"]:
+    if args and args[0] == "shorts":
+        short_metadata(args[1:])
+    elif args == ["canal"]:
         banner(); avatar()
         os.makedirs(CAN, exist_ok=True)
         open(os.path.join(CAN, "descripcion_canal.txt"), "w", encoding="utf-8").write(CHANNEL_DESC + "\n")
