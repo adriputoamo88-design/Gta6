@@ -8,10 +8,12 @@ from PIL import Image, ImageDraw
 import art
 from art import W, H, THEMES, text_img, icon, silhouette, rrect, add_glow, wrap, ANTON, BEBAS, MB, MX, MR
 import audio
-from content import VIDEOS, CHANNEL, HANDLE
+from content import CHANNEL, HANDLE
+import loader
+VIDEOS, OUTROOT = loader.load()
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BUILD = os.path.join(ROOT, "build"); OUT = os.path.join(ROOT, "videos"); SUBS = os.path.join(ROOT, "subtitulos")
+BUILD = os.path.join(ROOT, "build"); OUT = os.path.join(OUTROOT, "videos"); SUBS = os.path.join(OUTROOT, "subtitulos")
 FPS = 30
 PAD_BEFORE, PAD_AFTER = 0.25, 0.45
 WHITE = (255, 255, 255)
@@ -218,8 +220,10 @@ def chunks(say, maxc=40):
     return out
 
 
-def caption_img(txt):
-    ti = text_img(txt, MX, 46, fill=WHITE, stroke=5, stroke_fill=(0, 0, 0), max_w=1700)
+def caption_img(txt, size=46):
+    mw = 1700 if size < 60 else 980
+    if size >= 60: txt = wrap(txt, MX, size, mw)
+    ti = text_img(txt, MX, size, fill=WHITE, stroke=5, stroke_fill=(0, 0, 0), max_w=mw, align="center")
     bx = rrect(ti.width + 50, ti.height + 22, 18, (0, 0, 0, 150)); bx.alpha_composite(ti, (25, 11))
     return bx
 
@@ -264,15 +268,23 @@ def render(v):
     chapters = [("0:00", "Intro")]
     for sc, (s0, *_ ) in zip(v["scenes"], segs):
         if sc.get("chapter"): chapters.append((f"{int(s0 // 60)}:{int(s0 % 60):02}", sc["chapter"]))
-    json.dump(dict(duration=total, chapters=chapters), open(os.path.join(BUILD, f"{slug}-meta.json"), "w"), ensure_ascii=False)
+    os.makedirs(BUILD, exist_ok=True); json.dump(dict(duration=total, chapters=chapters), open(os.path.join(BUILD, f"{slug}-meta.json"), "w"), ensure_ascii=False)
     cap_cache = {}
     # 4) frames
     bg = art.Background(v["theme"], seed=zlib.crc32(slug.encode()) % 1000)
     panel = rrect(PANEL[2] - PANEL[0], PANEL[3] - PANEL[1], 36, (8, 3, 20, 175), outline=th["acc"] + (90,), ow=2)
     wm = text_img(CHANNEL, BEBAS, 44, fill=WHITE, glow=th["acc"], glow_r=8)
     built = [None] * len(segs)
+    short = v.get("short", False); OW, OH = (1080, 1920) if short else (W, H)
+    if short:
+        vbg = bg.frame(0.0).resize((int(1920 * 1920 / 1080), 1920)).crop((int((3413 - 1080) / 2), 0, int((3413 - 1080) / 2) + 1080, 1920))
+        vbg = vbg.filter(__import__("PIL.ImageFilter", fromlist=["x"]).GaussianBlur(6))
+        vbg = Image.blend(vbg, Image.new("RGB", vbg.size, (8, 3, 20)), 0.45)
+        vt = text_img(art.wrap(v.get("short_title", v["title"]).upper(), ANTON, 120, 980), ANTON, 120, glow=th["acc"], glow_r=16, max_w=1000, align="center")
+        vbg.paste(vt, (540 - vt.width // 2, 330 - vt.height // 2), vt)
+        vwm = text_img(CHANNEL + "  ·  " + HANDLE, MB, 40, fill=th["acc2"]); vbg.paste(vwm, (540 - vwm.width // 2, 1700), vwm)
     out = os.path.join(OUT, f"{slug}.mp4")
-    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
+    cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{OW}x{OH}", "-r", str(FPS), "-i", "-",
            "-i", vwav, "-i", mwav, "-filter_complex",
            "[1:a]aresample=48000,asplit=2[v][sc];[2:a]aresample=48000[m];"
            "[m][sc]sidechaincompress=threshold=0.02:ratio=10:attack=15:release=350[md];"
@@ -305,14 +317,20 @@ def render(v):
             p = lt / 0.3; xx = int(-600 + p * (W + 1200))
             d.polygon([(xx - 500, 0), (xx, 0), (xx - 300, H), (xx - 800, H)], fill=th["acc"])
             d.polygon([(xx - 560, 0), (xx - 500, 0), (xx - 800, H), (xx - 860, H)], fill=th["acc2"])
-        fr.paste(wm, (40, 24), wm)
-        # barra de progreso
-        d.rectangle([0, H - 8, int(W * tt / total), H], fill=th["acc"])
+        if not short:
+            fr.paste(wm, (40, 24), wm)
+            d.rectangle([0, H - 8, int(W * tt / total), H], fill=th["acc"])  # barra de progreso
         while ci < len(caps) and tt > caps[ci][1]: ci += 1
-        if ci < len(caps) and caps[ci][0] <= tt:
-            c = caps[ci][2]
-            if c not in cap_cache: cap_cache = {c: caption_img(c)}
-            ci_img = cap_cache[c]; fr.paste(ci_img, (W // 2 - ci_img.width // 2, 955 - ci_img.height // 2 + 10), ci_img)
+        cap = caps[ci][2] if ci < len(caps) and caps[ci][0] <= tt else None
+        if cap and cap not in cap_cache: cap_cache = {cap: caption_img(cap, 64 if short else 46)}
+        if short:
+            vf = vbg.copy(); vf.paste(fr.crop((60, 70, 1860, 930)).resize((1080, 516), Image.BILINEAR), (0, 600))
+            if cap:
+                ci_img = cap_cache[cap]; vf.paste(ci_img, (540 - ci_img.width // 2, 1330), ci_img)
+            ImageDraw.Draw(vf).rectangle([0, OH - 12, int(OW * tt / total), OH], fill=th["acc"])
+            fr = vf
+        elif cap:
+            ci_img = cap_cache[cap]; fr.paste(ci_img, (W // 2 - ci_img.width // 2, 955 - ci_img.height // 2 + 10), ci_img)
         ff.stdin.write(fr.tobytes())
     ff.stdin.close(); ff.wait()
     print(f"OK {out} ({total:.1f}s)", flush=True)

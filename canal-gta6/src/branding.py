@@ -4,10 +4,12 @@ import json, os
 from PIL import Image, ImageDraw
 import art
 from art import THEMES, text_img, icon, add_glow, rrect, silhouette, ANTON, BEBAS, MB, MX
-from content import VIDEOS, CHANNEL, HANDLE
+from content import CHANNEL, HANDLE
+import loader
+VIDEOS, OUTROOT = loader.load()
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TH = os.path.join(ROOT, "miniaturas"); CAN = os.path.join(ROOT, "canal"); META = os.path.join(ROOT, "metadatos")
+TH = os.path.join(OUTROOT, "miniaturas"); CAN = os.path.join(ROOT, "canal"); META = os.path.join(OUTROOT, "metadatos")
 
 
 def thumb(v):
@@ -86,7 +88,7 @@ def metadata():
         m = json.load(open(os.path.join(ROOT, "build", v["slug"] + "-meta.json")))
         chap = "\n".join(f"{a} {b}" for a, b in m["chapters"]) if len(m["chapters"]) >= 3 else ""
         desc = v["desc"] + ("\n\n⏱️ Capítulos\n" + chap if chap else "") + "\n" + FOOTER
-        txt = (f"TÍTULO:\n{v['title']}\n\nDESCRIPCIÓN:\n{desc}\n\nETIQUETAS (copiar en 'Etiquetas'):\n{', '.join(v['tags'])}\n\n"
+        txt = (f"TÍTULO:\n{v['title']}{' #Shorts' if v.get('short') else ''}\n\nDESCRIPCIÓN:\n{desc}\n\nETIQUETAS (copiar en 'Etiquetas'):\n{', '.join(v['tags'])}\n\n"
                f"ARCHIVOS:\n  vídeo: videos/{v['slug']}.mp4\n  miniatura: miniaturas/{v['slug']}.jpg\n  subtítulos (español): subtitulos/{v['slug']}.srt\n"
                f"DURACIÓN: {int(m['duration'] // 60)}:{int(m['duration'] % 60):02}\n"
                "CONFIGURACIÓN: Idioma: Español · Categoría: Videojuegos · No es para niños · Contenido alterado/sintético: SÍ (voz generada por IA)\n")
@@ -102,4 +104,4 @@ if __name__ == "__main__":
         metadata()
     else:
         for v in VIDEOS: thumb(v)
-        banner(); avatar()
+        if OUTROOT == ROOT: banner(); avatar()
