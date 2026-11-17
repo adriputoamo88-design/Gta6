@@ -114,9 +114,11 @@ def build_scene(sc, th, dur, vid):
             dyn.append(hero_dyn(sc["hero"], 320 if sc["hero"][0] == "cube" else 250, W // 2, 330 if sc["hero"][0] == "cube" else 345, 0.0, glow=acc, glint=sc.get("glint", False)))
         if sc.get("badge"):
             items.append(Item(badge(sc["badge"], acc), W // 2, 118, 0.05, "pop", center=True))
-        big = text_img(wrap(sc["h"], SILK, 130, 1650), SILK, 130, fill=WHITE, max_w=1700, align="center", glow=(0, 0, 0), glow_r=16)
-        items.append(Item(big, W // 2, 500, 0.25, "drop", 0.7, center=True, sfx="place"))
         sub = text_img(sc["s"], MX, 52, fill=acc2, max_w=1500, align="center", glow=(0, 0, 0), glow_r=10)
+        for fs in (130, 112, 98, 86):   # el subtítulo nunca debe llegar a la zona de los subtítulos (y > 900)
+            big = text_img(wrap(sc["h"], SILK, fs, 1650), SILK, fs, fill=WHITE, max_w=1700, align="center", glow=(0, 0, 0), glow_r=16)
+            if 500 + big.height + 20 + sub.height <= 905: break
+        items.append(Item(big, W // 2, 500, 0.25, "drop", 0.7, center=True, sfx="place"))
         items.append(Item(sub, W // 2, 520 + big.height, 0.7, "up", center=True))
         if sc.get("splash"):
             sp = text_img(sc["splash"], SILK, 46, fill=GOLD, shadow_col=(62, 52, 0)).rotate(16, expand=True, resample=Image.BICUBIC)

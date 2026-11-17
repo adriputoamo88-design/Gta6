@@ -20,6 +20,8 @@ canal-minecraft/
 |---|---|---|---|
 | 001 | 17/11/2026 | THE DEEP FREEZE: todo lo NUEVO de Minecraft (cuevas de hielo, Frostbite y hielo que se ROMPE) | 2:27 |
 | 002 | 17/11/2026 | Cómo encontrar DIAMANTES rápido en Minecraft (la capa EXACTA y el mejor método) | 2:30 |
+| 003 | 18/11/2026 | Los 10 MEJORES ENCANTAMIENTOS de Minecraft (y en qué herramienta va cada uno) | 2:31 |
+| 004 | 18/11/2026 | Cómo conseguir REPARACIÓN fácil en Minecraft (el truco del ATRIL paso a paso) | 2:09 |
 
 ## Cómo subir cada vídeo (YouTube Studio → Crear → Subir vídeos)
 1. Sube `videos/NNN-....mp4`.

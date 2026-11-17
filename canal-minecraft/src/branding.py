@@ -39,11 +39,14 @@ def thumb(v):
         im.alpha_composite(b, (36, y)); y += b.height + 10
     lines = t["big"].split("\n"); size = 150
     while True:
-        imgs = [text_img(l, SILK, size, fill=WHITE, stroke=8, stroke_fill=INK, shadow_col=(0, 0, 0)) for l in lines]
-        step = int(size * 1.05); hh = step * (len(imgs) - 1) + imgs[-1].height
-        if max(i.width for i in imgs) <= 800 and hh <= 420: break
+        imgs = [text_img(l, SILK, size, fill=WHITE, outline=8, shadow_col=(0, 0, 0)) for l in lines]
+        gap = max(4, size // 18)
+        hh = sum(i.height for i in imgs) + gap * (len(imgs) - 1)
+        if max(i.width for i in imgs) <= 800 and hh <= 430: break
         size = int(size * 0.94)
-    for k, li in enumerate(imgs): im.alpha_composite(li, (26, y + k * step))
+    yy = y
+    for li in imgs:
+        im.alpha_composite(li, (26, yy)); yy += li.height + gap
     y += hh
     if t.get("tag"):
         tg = label_box(t["tag"], SILK, 46, fill=acc, fg=INK, padx=26, pady=14, b=8)
@@ -58,7 +61,7 @@ def banner():
     bg = art.Background("superficie", seed=9).frame(3.0).resize((2560, 1440), Image.LANCZOS).convert("RGBA")
     sh = Image.new("RGBA", bg.size, (0, 0, 0, 0)); d = ImageDraw.Draw(sh)
     d.rectangle([0, 500, 2560, 940], fill=(0, 0, 0, 120)); bg.alpha_composite(sh)
-    t = text_img(CHANNEL, SILK, 170, fill=WHITE, stroke=6, stroke_fill=INK, shadow_col=(0, 0, 0), max_w=1440)
+    t = text_img(CHANNEL, SILK, 170, fill=WHITE, outline=6, shadow_col=(0, 0, 0), max_w=1440)
     bg.alpha_composite(t, (1280 - t.width // 2, 560))
     s = text_img("MINECRAFT EN ESPAÑOL  ·  GUÍAS  ·  TRUCOS  ·  NOVEDADES", MB, 46, fill=GOLD, shadow_col=(0, 0, 0), max_w=1440)
     bg.alpha_composite(s, (1280 - s.width // 2, 580 + t.height + 10))
@@ -93,7 +96,7 @@ Canal no oficial. Minecraft es una marca de Mojang Synergies AB / Microsoft. Est
 FOOTER = """
 —————————————
 🔔 Suscríbete y activa la campanita: 2 vídeos nuevos de Minecraft cada día.
-📌 Información comprobada a fecha de {date}. Válido para Java y Bedrock salvo que se indique lo contrario.
+📌 Información comprobada para la fecha de publicación ({date}). Válido para Java y Bedrock salvo que se indique lo contrario.
 
 Canal no oficial. Minecraft es una marca de Mojang Synergies AB / Microsoft. Este canal no está afiliado ni patrocinado por Mojang ni por Microsoft. Los gráficos, la música y la voz de este vídeo son de creación propia.
 

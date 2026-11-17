@@ -8,11 +8,11 @@ Marca con `[x]` lo publicado y pon el número del vídeo.
 ## Publicados
 - [x] 001 · The Deep Freeze: todo lo nuevo (noticia, 17/11/2026)
 - [x] 002 · Cómo encontrar diamantes rápido: capa Y -59 y minería en ramas (guía, 17/11/2026)
+- [x] 003 · Los 10 mejores encantamientos y en qué herramienta va cada uno (guía, 18/11/2026)
+- [x] 004 · Cómo conseguir Reparación fácil: el truco del atril (guía, 18/11/2026)
 
 ## Próximos (en orden de prioridad)
 ### Guías con muchas búsquedas
-- [ ] Los 10 mejores encantamientos y en qué herramienta va cada uno
-- [ ] Cómo conseguir Reparación (Mending) fácil con aldeanos bibliotecarios
 - [ ] Cómo encontrar una fortaleza y activar el portal del End
 - [ ] Cómo derrotar al Ender Dragon paso a paso
 - [ ] Cómo encontrar Netherite (escombros ancestrales) y mejorar tu equipo

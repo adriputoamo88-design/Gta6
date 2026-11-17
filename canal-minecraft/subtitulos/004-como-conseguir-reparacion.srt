@@ -1,0 +1,251 @@
+1
+00:00:00,750 --> 00:00:02,918
+Reparación es el mejor encantamiento de
+
+2
+00:00:02,918 --> 00:00:04,974
+Minecraft, pero no sale en la mesa de
+
+3
+00:00:04,974 --> 00:00:07,308
+encantamientos. Hoy te enseño el truco más
+
+4
+00:00:07,308 --> 00:00:08,642
+fiable para conseguirlo:
+
+5
+00:00:08,642 --> 00:00:10,643
+un aldeano bibliotecario y un atril.
+
+6
+00:00:10,643 --> 00:00:11,310
+Paso a paso.
+
+7
+00:00:12,060 --> 00:00:13,400
+Primero, cómo funciona.
+
+8
+00:00:13,400 --> 00:00:15,673
+Si llevas en la mano o puesto un objeto
+
+9
+00:00:15,673 --> 00:00:18,062
+dañado con Reparación, la experiencia que
+
+10
+00:00:18,062 --> 00:00:20,335
+recoges se usa primero para arreglarlo.
+
+11
+00:00:20,335 --> 00:00:22,666
+Por eso tu mejor pico puede durarte para
+
+12
+00:00:22,666 --> 00:00:23,132
+siempre.
+
+13
+00:00:23,882 --> 00:00:26,248
+Vas a necesitar un aldeano sin oficio y un
+
+14
+00:00:26,248 --> 00:00:28,558
+atril, que se fabrica con cuatro losas de
+
+15
+00:00:28,558 --> 00:00:29,910
+madera y una estantería.
+
+16
+00:00:29,910 --> 00:00:31,995
+También esmeraldas, porque en Java el
+
+17
+00:00:31,995 --> 00:00:34,305
+libro suele costar entre diez y treinta y
+
+18
+00:00:34,305 --> 00:00:36,277
+ocho, y un libro normal para pagar.
+
+19
+00:00:37,027 --> 00:00:39,207
+Paso uno: busca un aldeano sin oficio y
+
+20
+00:00:39,207 --> 00:00:41,499
+enciérralo, por ejemplo en un hueco de un
+
+21
+00:00:41,499 --> 00:00:43,512
+bloque. Los de bata verde no sirven:
+
+22
+00:00:43,512 --> 00:00:45,133
+nunca aceptan ningún trabajo.
+
+23
+00:00:45,883 --> 00:00:47,953
+Paso dos: coloca el atril a su lado.
+
+24
+00:00:47,953 --> 00:00:50,138
+En unos segundos verás unas partículas
+
+25
+00:00:50,138 --> 00:00:51,748
+verdes: ya es bibliotecario.
+
+26
+00:00:51,748 --> 00:00:54,163
+Abre su menú de comercio y mira qué libros
+
+27
+00:00:54,163 --> 00:00:54,566
+ofrece.
+
+28
+00:00:55,316 --> 00:00:57,671
+Paso tres: si no ofrece Reparación, rompe
+
+29
+00:00:57,671 --> 00:00:59,280
+el atril y vuelve a ponerlo.
+
+30
+00:00:59,280 --> 00:01:01,636
+El aldeano pierde el oficio, lo recupera,
+
+31
+00:01:01,636 --> 00:01:02,900
+y sus ofertas cambian.
+
+32
+00:01:02,900 --> 00:01:04,738
+Repite hasta que salga el libro.
+
+33
+00:01:04,738 --> 00:01:07,093
+A veces tarda bastantes intentos, así que
+
+34
+00:01:07,093 --> 00:01:07,668
+paciencia.
+
+35
+00:01:08,418 --> 00:01:10,606
+Lo más importante: no comercies con él
+
+36
+00:01:10,606 --> 00:01:12,160
+hasta que salga Reparación.
+
+37
+00:01:12,160 --> 00:01:14,405
+En cuanto haces un solo intercambio, el
+
+38
+00:01:14,405 --> 00:01:16,592
+aldeano se queda con ese oficio y esas
+
+39
+00:01:16,592 --> 00:01:18,780
+ofertas para siempre, y el truco ya no
+
+40
+00:01:18,780 --> 00:01:19,298
+funciona.
+
+41
+00:01:20,048 --> 00:01:22,148
+Paso cuatro: compra el libro, ve a un
+
+42
+00:01:22,148 --> 00:01:24,476
+yunque y júntalo con tu pico, tu espada o
+
+43
+00:01:24,476 --> 00:01:26,349
+tu armadura. Y si además le pones
+
+44
+00:01:26,349 --> 00:01:28,676
+Irrompibilidad tres, tendrás herramientas
+
+45
+00:01:28,676 --> 00:01:29,925
+prácticamente eternas.
+
+46
+00:01:30,675 --> 00:01:32,718
+Un aviso: si creaste tu mundo con el
+
+47
+00:01:32,718 --> 00:01:34,987
+experimento de reequilibrio del comercio
+
+48
+00:01:34,987 --> 00:01:37,313
+de aldeanos activado, las reglas cambian,
+
+49
+00:01:37,313 --> 00:01:39,072
+y Reparación solo la venden los
+
+50
+00:01:39,072 --> 00:01:40,831
+bibliotecarios de los pantanos.
+
+51
+00:01:40,831 --> 00:01:43,157
+En un mundo normal, el truco funciona sin
+
+52
+00:01:43,157 --> 00:01:43,667
+problema.
+
+53
+00:01:44,417 --> 00:01:46,764
+¿Otras formas? Pescando, a veces sale como
+
+54
+00:01:46,764 --> 00:01:49,112
+tesoro, y también puede aparecer en libros
+
+55
+00:01:49,112 --> 00:01:51,068
+encantados de los cofres de algunas
+
+56
+00:01:51,068 --> 00:01:53,135
+estructuras. Pero eso es pura suerte.
+
+57
+00:01:53,135 --> 00:01:54,700
+El aldeano es lo más fiable.
+
+58
+00:01:55,450 --> 00:01:57,725
+¿Cuántas veces tuviste que romper el atril
+
+59
+00:01:57,725 --> 00:01:59,566
+hasta que salió? Cuéntamelo en los
+
+60
+00:01:59,566 --> 00:02:01,787
+comentarios. Suscríbete a Bloque a Bloque
+
+61
+00:02:01,787 --> 00:02:02,978
+y activa la campanita:
+
+62
+00:02:02,978 --> 00:02:05,199
+subimos dos vídeos de Minecraft cada día.
+
+63
+00:02:05,199 --> 00:02:06,607
+Nos vemos en el siguiente.

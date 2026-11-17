@@ -52,7 +52,7 @@ def vgrad(w, h, stops):
 
 # ================================================================ texto
 def text_img(txt, fname, size, fill=WHITE, shadow=True, shadow_col=None, stroke=0, stroke_fill=INK,
-             max_w=None, spacing=0.10, align="left", glow=None, glow_r=14):
+             max_w=None, spacing=0.10, align="left", glow=None, glow_r=14, outline=0, outline_col=INK):
     """Texto RGBA recortado. Sombra dura desplazada (estilo pixel) opcional."""
     f = font(fname, size)
     lines = txt.split("\n")
@@ -73,6 +73,13 @@ def text_img(txt, fname, size, fill=WHITE, shadow=True, shadow_col=None, stroke=
         if shadow:
             d.text((x + so, y + so), l, font=f, fill=sc + (255,), stroke_width=stroke, stroke_fill=sc)
         d.text((x, y), l, font=f, fill=fill + (255,), stroke_width=stroke, stroke_fill=stroke_fill)
+    if outline:
+        # contorno por dilatación de la máscara (el trazo de FreeType descoloca las tildes de las fuentes pixel)
+        pad_o = outline + 2
+        big = Image.new("RGBA", (im.width + pad_o * 2, im.height + pad_o * 2), (0, 0, 0, 0)); big.alpha_composite(im, (pad_o, pad_o))
+        m = big.getchannel("A").point(lambda v: 255 if v > 40 else 0).filter(ImageFilter.MaxFilter(outline * 2 + 1))
+        ol = Image.new("RGBA", big.size, outline_col + (0,)); ol.putalpha(m)
+        ol.alpha_composite(big); im = ol
     if glow:
         a = im.getchannel("A").filter(ImageFilter.GaussianBlur(glow_r))
         g = Image.new("RGBA", im.size, glow + (0,)); g.putalpha(a.point(lambda v: min(255, int(v * 1.3))))

@@ -13,7 +13,7 @@ VIDEO = dict(
     hashtags="#Encantamientos #MinecraftGuia",
     theme="noche",
     title="Los 10 MEJORES ENCANTAMIENTOS de Minecraft (y en qué herramienta va cada uno)",
-    thumb=dict(top="TOP 10", big="MEJORES\nENCANTAMIENTOS", tag="EL Nº1 TE SORPRENDERÁ", hero=("sprite", "book"), hero2=("sprite", "pick_diamond")),
+    thumb=dict(top="TOP 10", big="MEJORES\nENCANTAMIENTOS", tag="¿CUÁL ES EL NÚMERO 1?", hero=("sprite", "book"), hero2=("sprite", "pick_diamond")),
     tags=["minecraft", "encantamientos minecraft", "mejores encantamientos", "top 10 encantamientos", "minecraft encantamientos guia",
           "reparacion minecraft", "fortuna 3", "toque de seda", "eficiencia 5", "irrompibilidad 3", "filo 5",
           "mesa de encantamientos", "minecraft español", "minecraft supervivencia"],
