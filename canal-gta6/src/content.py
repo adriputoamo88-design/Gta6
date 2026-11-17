@@ -323,4 +323,5 @@ PRON = [
  ("USB", "u ese be"), ("PC", "pe ce"), ("influencers", "influénsers"), ("streamers", "estrímers"),
  ("Nintendo Switch 2", "Nintendo Suitch dos"), ("Switch", "Suitch"), ("Xbox One", "Équisbox Uan"), ("Uan", "Uan"),
  ("gigas", "gigas"), ("GPS", "ge pe ese"), ("Ike", "Áik"),
+ ("PSSR", "pe ese ese erre"), ("CPU", "ce pe u"), ("Red Dead Redemption 2", "Red Ded Redémshon dos"), ("Sensor Tower", "Sénsor Táuer"), ("ray tracing", "rei tréisin"),
 ]
