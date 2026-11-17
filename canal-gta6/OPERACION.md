@@ -5,7 +5,7 @@ Este archivo lo sigue la tarea programada que lleva el canal cada mañana a las 
 
 ## Pasos
 1. `git fetch origin claude/gta6-channel-videos-gr26ku && git checkout claude/gta6-channel-videos-gr26ku && git pull`
-2. `bash canal-gta6/setup.sh`
+2. `bash canal-gta6/setup.sh` (si imprime una línea `export PYTHONPATH=...`, úsala antes de renderizar)
 3. Lee `canal-gta6/diario/REGISTRO.md` para no repetir temas y para ver qué se ha publicado.
 4. **Investiga** con WebSearch las noticias de GTA 6 de las últimas 24-48 h y lo que más busca la gente: trucos confirmados, dinero, misiones, secretos, easter eggs, problemas técnicos, parches, online, PC, ventas o récords. Usa fuentes fiables (Rockstar Newswire, Vandal, 3DJuegos, IGN, Eurogamer, GamesRadar…). **Nunca inventes datos.** Si algo no está confirmado, dilo en el guion ("según…", "por confirmar").
 5. Elige 2 temas:
