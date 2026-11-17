@@ -2,6 +2,8 @@
 
 Este es el proceso que se sigue cada día para sacar los 2 vídeos. Sirve igual si lo hace Claude con la tarea programada o si lo haces tú a mano.
 
+**Tarea programada:** se ejecuta cada día a las 8:41 (hora de España) y prepara los 2 vídeos **del día siguiente**. Así siempre tienes un día de margen para revisarlos y programarlos.
+
 ## 0. Preparar el entorno (solo si el contenedor es nuevo)
 ```bash
 pip install kokoro-onnx soundfile scipy pillow numpy
