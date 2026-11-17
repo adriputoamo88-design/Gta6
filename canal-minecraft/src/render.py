@@ -74,12 +74,14 @@ def hero(spec, size):
     return ("img", sprite(spec[1], size))
 
 
-def hero_dyn(spec, size, cx, cy, t0=0.0, glow=None, bob=14, speed=1.0):
-    """Devuelve una función que dibuja el héroe (cubo girando o sprite flotando)."""
+def hero_dyn(spec, size, cx, cy, t0=0.0, glow=None, bob=14, speed=1.0, glint=False):
+    """Devuelve una función que dibuja el héroe (cubo girando o sprite flotando). glint: brillo de encantamiento."""
     kind, data = hero(spec, size)
     if kind == "img":
-        im = add_glow(data, glow, 26, 0.9) if glow else data
-        im = shadowed(im, max(6, size // 26), 110) if not glow else im
+        base = art.glint_frames(data) if glint else [data]
+        if glow: frames = [add_glow(f, glow, 26, 0.9) for f in base]
+        else: frames = [shadowed(f, max(6, size // 26), 110) for f in base]
+        im = frames[0]
     else:
         frames = [add_glow(f, glow, 24, 0.7) if glow else f for f in data]
     def draw(fr, lt):
@@ -89,7 +91,7 @@ def hero_dyn(spec, size, cx, cy, t0=0.0, glow=None, bob=14, speed=1.0):
         if kind == "spin":
             img = frames[int((lt - t0) * 14 * speed) % len(frames)]
         else:
-            img = im
+            img = frames[int((lt - t0) * 16) % len(frames)] if len(frames) > 1 else im
         if sc < 0.999:
             img = img.resize((max(1, int(img.width * sc)), max(1, int(img.height * sc))), Image.BILINEAR)
         fr.paste(img, (int(cx - img.width / 2), int(yy - img.height / 2)), img)
@@ -109,7 +111,7 @@ def build_scene(sc, th, dur, vid):
     t = sc["t"]; acc, acc2 = th["acc"], th["acc2"]; items = []; dyn = []; sfx = []
     if t == "title":
         if sc.get("hero"):
-            dyn.append(hero_dyn(sc["hero"], 320, W // 2, 330, 0.0, glow=acc))
+            dyn.append(hero_dyn(sc["hero"], 320 if sc["hero"][0] == "cube" else 250, W // 2, 330 if sc["hero"][0] == "cube" else 345, 0.0, glow=acc, glint=sc.get("glint", False)))
         if sc.get("badge"):
             items.append(Item(badge(sc["badge"], acc), W // 2, 118, 0.05, "pop", center=True))
         big = text_img(wrap(sc["h"], SILK, 130, 1650), SILK, 130, fill=WHITE, max_w=1700, align="center", glow=(0, 0, 0), glow_r=16)
@@ -128,7 +130,7 @@ def build_scene(sc, th, dur, vid):
     elif t == "news":
         bx = gui_panel(520, 520, (0, 0, 0), 90)
         items.append(Item(bx, 150, 230, 0.0, "fade"))
-        dyn.append(hero_dyn(sc["hero"], 340, 410, 480, 0.15, glow=acc if sc.get("glow", True) else None))
+        dyn.append(hero_dyn(sc["hero"], 340, 410, 480, 0.15, glow=acc if sc.get("glow", True) else None, glint=sc.get("glint", False)))
         if sc.get("note"):
             items.append(Item(text_img(sc["note"], MR, 26, fill=(200, 200, 210), shadow=False), 410, 770, 0.6, "fade", center=True))
         x0 = 740
@@ -156,37 +158,37 @@ def build_scene(sc, th, dur, vid):
             row.alpha_composite(ti, (S + 40, max(0, gap // 2 - ti.height // 2)))
             items.append(Item(row, 170, y0 + i * gap, times[i], "left", 0.45, sfx="place"))
     elif t == "stat":
-        dyn.append(hero_dyn(sc["hero"], 360, 400, 500, 0.0, glow=acc))
+        dyn.append(hero_dyn(sc["hero"], 360, 400, 500, 0.0, glow=acc, glint=sc.get("glint", False)))
         big = text_img(sc["big"], SILK, 190, fill=acc, glow=acc, glow_r=18, max_w=1080)
         items.append(Item(big, 700, 230, 0.2, "pop", 0.5, sfx="ding"))
         items.append(Item(text_img(sc["label"].upper(), SILK, 54, fill=WHITE, max_w=1080), 710, 250 + big.height, 0.5, "up"))
         items.append(Item(text_img(wrap(sc["small"], MX, 44, 1060), MX, 44, fill=acc2, max_w=1080), 710, 340 + big.height, 0.9, "up"))
     elif t == "tip":
-        num = text_img(sc["n"], SILK, 230, fill=acc, glow=acc, glow_r=20)
+        num = text_img(sc["n"], SILK, 230, fill=acc, glow=acc, glow_r=20, max_w=500)
         items.append(Item(num, 330 - num.width // 2, 500 - num.height // 2, 0.0, "pop", 0.5, sfx="ding"))
-        if sc.get("hero"): dyn.append(hero_dyn(sc["hero"], 150, 330, 740, 0.4))
+        if sc.get("hero"): dyn.append(hero_dyn(sc["hero"], 200, 330, 745, 0.4, glint=sc.get("glint", False)))
         items.append(Item(badge(sc.get("badge", "CONSEJO"), acc2), 640, 240, 0.15, "pop"))
         h = text_img(wrap(sc["h"].upper(), SILK, 72, 1080), SILK, 72, max_w=1100)
         items.append(Item(h, 640, 330, 0.25, "left", sfx="place"))
         items.append(Item(text_img(wrap(sc["s"], MX, 46, 1080), MX, 46, fill=acc2, max_w=1100), 645, 360 + h.height, 0.6, "up"))
     elif t == "icon":
-        dyn.append(hero_dyn(sc["hero"], 300, W // 2, 330, 0.0, glow=sc.get("glowcol", acc)))
+        dyn.append(hero_dyn(sc["hero"], 260, W // 2, 300, 0.0, glow=sc.get("glowcol", acc), glint=sc.get("glint", False)))
         if sc.get("warn"):
             stripe = Image.new("RGBA", (PANEL[2] - PANEL[0] - 10, 26), (0, 0, 0, 0)); sd = ImageDraw.Draw(stripe)
             for x in range(-40, stripe.width, 56): sd.polygon([(x, 26), (x + 26, 0), (x + 54, 0), (x + 28, 26)], fill=(255, 196, 0, 255))
             sd.rectangle([0, 0, stripe.width, 26], outline=INK + (255,), width=0)
             items.append(Item(stripe, PANEL[0] + 5, PANEL[1] + 5, 0.0, "fade"))
             items.append(Item(stripe, PANEL[0] + 5, PANEL[3] - 31, 0.0, "fade"))
-        h = text_img(wrap(sc["h"], SILK, 96, 1600), SILK, 96, fill=WHITE, max_w=1600, align="center")
-        items.append(Item(h, W // 2, 540, 0.3, "drop", 0.6, center=True, sfx="place"))
-        items.append(Item(text_img(wrap(sc["s"], MX, 48, 1500), MX, 48, fill=acc2, max_w=1500, align="center"), W // 2, 570 + h.height, 0.7, "up", center=True))
+        h = text_img(wrap(sc["h"], SILK, 92, 1600), SILK, 92, fill=WHITE, max_w=1600, align="center")
+        items.append(Item(h, W // 2, 465, 0.3, "drop", 0.6, center=True, sfx="place"))
+        items.append(Item(text_img(wrap(sc["s"], MX, 46, 1500), MX, 46, fill=acc2, max_w=1500, align="center"), W // 2, 490 + h.height, 0.7, "up", center=True))
     elif t == "vs":
         items.append(Item(text_img(sc["h"], SILK, 80, fill=WHITE, max_w=1500, align="center"), W // 2, 135, 0.05, "pop", 0.4, center=True))
         cols = [(sc.get("lt", "ANTES"), sc["left"], 170, (170, 170, 176), sc.get("lhero")), (sc.get("rt", "AHORA"), sc["right"], 1010, acc, sc.get("rhero"))]
         n = max(len(sc["left"]), len(sc["right"])); times = reveal_times(n * 2, dur, 0.8)
         for side, (lab, lines, x0, col, hr) in enumerate(cols):
             items.append(Item(gui_panel(740, 600, lerp_col(col, 0.85), 150), x0, 255, 0.15 + side * 0.15, "up"))
-            items.append(Item(text_img(lab, SILK, 70, fill=col), x0 + 370, 285, 0.25 + side * 0.2, "pop", center=True, sfx="pop"))
+            items.append(Item(text_img(lab, SILK, 70, fill=col, max_w=680), x0 + 370, 285, 0.25 + side * 0.2, "pop", center=True, sfx="pop"))
             if hr: dyn.append(hero_dyn(hr, 150, x0 + 370, 470, 0.35 + side * 0.2))
             for i, ln in enumerate(lines):
                 items.append(Item(text_img(wrap(ln, MX, 50, 640), MX, 50, fill=WHITE, max_w=660, align="center"), x0 + 370, 590 + i * 100, times[i * 2 + side], "up", center=True))

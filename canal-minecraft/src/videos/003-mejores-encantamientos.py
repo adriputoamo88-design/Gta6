@@ -1,0 +1,72 @@
+# -*- coding: utf-8 -*-
+# Guía. Comprobado el 17/11/2026. Válido en Java y Bedrock.
+# - Mesa de encantamientos: 15 estanterías a un bloque de distancia (con aire en medio) para las opciones de nivel 30.
+# - Niveles máximos: Botín III, Caída de pluma IV, Filo V, Protección IV, Fortuna III, Eficiencia V, Irrompibilidad III.
+# - Incompatibles: Filo / Castigo / Perdición de los artrópodos; Protección / otras protecciones; Fortuna / Toque de seda.
+# - Irrompibilidad en herramientas: probabilidad de gastar durabilidad = 1/(nivel+1) -> con III, de media x4.
+# - Reparación: no sale en la mesa de encantamientos (aldeanos, pesca, cofres).
+from content import OUTRO
+
+VIDEO = dict(
+    slug="003-mejores-encantamientos",
+    date="2026-11-18",
+    hashtags="#Encantamientos #MinecraftGuia",
+    theme="noche",
+    title="Los 10 MEJORES ENCANTAMIENTOS de Minecraft (y en qué herramienta va cada uno)",
+    thumb=dict(top="TOP 10", big="MEJORES\nENCANTAMIENTOS", tag="EL Nº1 TE SORPRENDERÁ", hero=("sprite", "book"), hero2=("sprite", "pick_diamond")),
+    tags=["minecraft", "encantamientos minecraft", "mejores encantamientos", "top 10 encantamientos", "minecraft encantamientos guia",
+          "reparacion minecraft", "fortuna 3", "toque de seda", "eficiencia 5", "irrompibilidad 3", "filo 5",
+          "mesa de encantamientos", "minecraft español", "minecraft supervivencia"],
+    desc=("Los 10 encantamientos que más cambian tu partida de Minecraft, en qué herramienta va cada uno y cuáles no se pueden juntar. "
+          "Además: cómo montar la mesa de encantamientos para llegar al nivel 30 y el equipo perfecto para tu pico, tu espada y tu armadura."),
+    scenes=[
+        dict(t="title", h="TOP 10 ENCANTAMIENTOS", s="Y en qué herramienta va cada uno", badge="GUÍA", splash="¡Nivel 30!",
+             hero=("sprite", "book"), glint=True,
+             say="Hay más de treinta encantamientos en Minecraft, pero solo unos pocos cambian de verdad tu partida. Hoy te traigo los diez mejores, en qué herramienta va cada uno, y cómo combinarlos sin desperdiciar experiencia."),
+        dict(t="stat", big="15", label="estanterías", hero=("cube", "planks", "bookshelf"),
+             small="Alrededor de la mesa de encantamientos, con un bloque de aire en medio. Así llegas a las opciones de nivel 30.",
+             say="Antes de empezar, lo básico: para que la mesa de encantamientos te dé las mejores opciones, las de nivel treinta, necesitas quince estanterías a su alrededor, con un bloque de aire entre la mesa y las estanterías.",
+             chapter="La mesa de encantamientos"),
+        dict(t="tip", n="10", badge="ESPADA", h="Botín III", hero=("sprite", "sword_diamond"), glint=True,
+             s="Los mobs sueltan más: más pólvora, más huesos, más perlas de Ender.",
+             say="En el puesto diez, Botín tres, para la espada. Hace que los mobs suelten más objetos: más pólvora, más huesos, más perlas de Ender. Ideal para las granjas.",
+             chapter="El top 10"),
+        dict(t="tip", n="9", badge="BOTAS", h="Caída de pluma IV", hero=("sprite", "boots"), glint=True,
+             s="Reduce muchísimo el daño por caída.",
+             say="Número nueve: Caída de pluma cuatro, solo para las botas. Reduce muchísimo el daño por caída, y te salva de muchas caídas que sin él te matarían."),
+        dict(t="tip", n="8", badge="ARCO", h="Infinidad", hero=("sprite", "bow"), glint=True,
+             s="Con una sola flecha en el inventario, disparas sin gastar flechas.",
+             say="En el ocho, Infinidad, para el arco. Con una sola flecha en el inventario puedes disparar todo lo que quieras sin gastar ninguna."),
+        dict(t="tip", n="7", badge="ESPADA Y HACHA", h="Filo V", hero=("sprite", "sword_netherite"), glint=True,
+             s="Más daño en cada golpe. No se junta con Castigo ni con Perdición de los artrópodos.",
+             say="Número siete: Filo cinco, para la espada y el hacha. Sube el daño de cada golpe. Eso sí, no se puede juntar con Castigo ni con Perdición de los artrópodos."),
+        dict(t="tip", n="6", badge="ARMADURA", h="Protección IV", hero=("sprite", "chestplate"), glint=True,
+             s="Reduce casi todo tipo de daño. Ponlo en las cuatro piezas.",
+             say="En el seis, Protección cuatro, para la armadura. Reduce casi todos los tipos de daño, y se nota muchísimo si lo llevas en las cuatro piezas. No se combina con las otras protecciones, como la de fuego o la de explosiones."),
+        dict(t="vs", h="PUESTOS 5 Y 4: ELIGE UNO", lt="FORTUNA III", rt="TOQUE DE SEDA",
+             left=["Más diamantes, carbón y lapislázuli"], right=["Recoge el bloque tal cual: cristal, hielo…"],
+             lhero=("sprite", "diamond"), rhero=("cube", "ice"),
+             say="Los puestos cinco y cuatro van juntos, porque no se pueden poner en el mismo pico. Fortuna tres multiplica lo que sueltan las menas de diamante, carbón o lapislázuli. Toque de seda hace lo contrario: recoge el bloque tal cual, como el cristal o el hielo. Lo ideal es tener un pico de cada.",
+             chapter="Fortuna o Toque de seda"),
+        dict(t="tip", n="3", badge="PICO, HACHA Y PALA", h="Eficiencia V", hero=("sprite", "pick_iron"), glint=True,
+             s="Picas muchísimo más rápido. Cuando lo pruebas, no hay vuelta atrás.",
+             say="Bronce para Eficiencia cinco, para el pico, el hacha y la pala. Picas muchísimo más rápido, y cuando lo pruebas, ya no hay vuelta atrás."),
+        dict(t="tip", n="2", badge="CASI TODO", h="Irrompibilidad III", hero=("sprite", "pick_diamond"), glint=True,
+             s="En las herramientas, duran de media unas cuatro veces más.",
+             say="La plata es para Irrompibilidad tres. Vale para casi cualquier objeto, y en las herramientas hace que duren, de media, unas cuatro veces más."),
+        dict(t="tip", n="1", badge="CASI TODO", h="Reparación", hero=("sprite", "book"), glint=True,
+             s="Arregla tus objetos con la experiencia que recoges. No sale en la mesa de encantamientos.",
+             toast=("¡EL MEJOR!", "Tu pico, para siempre", "xp"),
+             say="Y el oro es para Reparación. Arregla tus herramientas y tu armadura con la experiencia que recoges, así que tu mejor pico puede durarte para siempre. Eso sí, no sale en la mesa de encantamientos. En el siguiente vídeo te enseño a conseguirlo fácil.",
+             chapter="El número 1"),
+        dict(t="hotbar", h="EL EQUIPO PERFECTO",
+             items=[(("sprite", "pick_diamond"), "PICO", "Eficiencia V · Irrompibilidad III · Fortuna III · Reparación"),
+                    (("sprite", "sword_diamond"), "ESPADA", "Filo V · Botín III · Irrompibilidad III · Reparación"),
+                    (("sprite", "chestplate"), "ARMADURA", "Protección IV · Irrompibilidad III · Reparación"),
+                    (("sprite", "boots"), "BOTAS", "Lo mismo que la armadura + Caída de pluma IV")],
+             say="Resumen del equipo perfecto. En el pico: Eficiencia, Irrompibilidad, Fortuna y Reparación. En la espada: Filo, Botín, Irrompibilidad y Reparación. En la armadura: Protección, Irrompibilidad y Reparación. Y en las botas, añade Caída de pluma. Para juntarlo todo, combina los libros en un yunque.",
+             chapter="El equipo perfecto"),
+        dict(t="outro", h="¿CUÁL ES TU FAVORITO?",
+             say="¿Cuál es tu encantamiento favorito? ¿Lo pondrías más arriba? Te leo en los comentarios. " + OUTRO),
+    ],
+)

@@ -252,6 +252,17 @@ def tex(name):
         a = _noise(rng, (176, 140, 88), 8)
         for y in (3, 7, 11, 15): a[y, :] = (126, 98, 58)
         for (y0, x) in ((0, 5), (4, 11), (8, 3), (12, 9)): a[y0:y0 + 3, x] = (140, 108, 66)
+    elif name == "bookshelf":
+        a = _noise(rng, (176, 140, 88), 8)
+        for y in (0, 1, 7, 8, 14, 15): a[y, :] = (150, 116, 70) if y in (1, 8, 15) else (176, 140, 88)
+        cols = [(150, 40, 40), (50, 70, 150), (60, 120, 50), (120, 60, 140), (140, 100, 50), (40, 110, 120)]
+        for y0 in (2, 9):
+            x = 1
+            while x < 15:
+                w_ = 1 if rng.random() < 0.6 else 2; c = cols[rng.integers(0, len(cols))]; top = y0 + (1 if rng.random() < 0.3 else 0)
+                a[top:y0 + 5, x:x + w_] = c
+                a[top, x:x + w_] = tuple(min(255, v + 50) for v in c)
+                x += w_ + (1 if rng.random() < 0.25 else 0)
     elif name == "sand": a = _specks(_noise(rng, (222, 210, 160), 8), rng, [(204, 190, 140), (236, 226, 182)], 30)
     elif name == "crystal":
         a = _noise(rng, (110, 220, 255), 14)
@@ -459,6 +470,14 @@ SPRITE_MAPS = {
            dict(k=(40, 80, 10), y=(230, 255, 120), g=(130, 230, 40), l=(220, 255, 160))),
     "clock": ([".kkkkkk.", "kyyyyyyk", "kybbbbyk", "kybwbbyk", "kyrrrryk", "kyyyyyyk", ".kkkkkk."],
               dict(k=(60, 40, 10), y=(250, 210, 60), b=(60, 110, 230), w=(255, 255, 160), r=(30, 120, 40))),
+    "boots": (["kkkkk.....", "kwllk.....", "klmmk.....", "klmmk.....", "klmmk.....", "klmmkkkkk.", "klmmmmmlk.", "kmmmmmmmmk", "kddddddddk", "kkkkkkkkkk"],
+              dict(k=(14, 70, 66), w=(235, 255, 252), l=(160, 250, 236), m=(74, 222, 206), d=(30, 150, 140))),
+    "chestplate": (["kkkk....kkkk", "kllmkkkkmmdk", "klmmmllmmmdk", "kkmmmlmmmmkk", ".kmmmlmmmdk.", ".kmmmlmmmdk.", ".kmmmmmmmdk.", ".kmmmmmmmdk.", ".kkkkkkkkkk."],
+                   dict(k=(14, 70, 66), l=(160, 250, 236), m=(74, 222, 206), d=(30, 150, 140))),
+    "bow": (["ww.....", "sww....", "s.ww...", "s..ww..", "s...ww.", "s...ww.", "s...ww.", "s...ww.", "s..ww..", "s.ww...", "sww....", "ww....."],
+            dict(w=(150, 108, 60), s=(225, 225, 225))),
+    "lectern": ([".......kkk", ".....kkwwk", "...kkwwwpk", ".kkwwwpppk", "kppppppPk.", "kkkkpPkk..", "...kpPk...", "...kpPk...", ".kkkpPkkk.", ".kppppppk.", ".kkkkkkkk."],
+                dict(k=(60, 40, 20), w=(240, 236, 220), p=(176, 140, 88), P=(126, 98, 58))),
     "hourglass": (["kkkkkkkkk", "kwwwwwwwk", ".kyyyyyk.", "..kyyyk..", "...kyk...", "...kyk...", "..kgygk..", ".kggyggk.", "kgyyyyygk", "kwwwwwwwk", "kkkkkkkkk"],
                   dict(k=(40, 26, 12), w=(150, 108, 60), y=(240, 200, 90), g=(200, 230, 255))),
     "map": (["kkkkkkkkkk", "kppppppppk", "kpggpbbppk", "kpgggpbbpk", "kppgpppbpk", "kpbbppggpk", "kppbbpgppk", "kppppppppk", "kkkkkkkkkk"],
@@ -639,3 +658,18 @@ class Background:
                 yy = (y - t * 30 * sp) % H; xx = (x + math.sin(t * sp + y) * 20) % W
                 d.rectangle([xx, yy, xx + s // 2 + 1, yy + s // 2 + 1], fill=(255, 190, 90, int(160 * sp)))
         return im.convert("RGB")
+
+
+def glint_frames(im, n=24, col=(190, 110, 255), k=0.6):
+    """Brillo diagonal morado que recorre un sprite (aspecto de objeto encantado)."""
+    a = np.array(im.getchannel("A"), dtype=np.float32) / 255.0
+    h, w = a.shape; yy, xx = np.mgrid[0:h, 0:w]
+    diag = (xx + yy) / float(w + h)
+    out = []
+    for i in range(n):
+        c = (i / n) * 1.6 - 0.3
+        band = np.clip(1 - np.abs(diag - c) / 0.12, 0, 1) + 0.18
+        ov = np.zeros((h, w, 4), np.uint8); ov[..., 0], ov[..., 1], ov[..., 2] = col
+        ov[..., 3] = (np.clip(band, 0, 1) * a * 255 * k).astype(np.uint8)
+        f = im.copy(); f.alpha_composite(Image.fromarray(ov, "RGBA")); out.append(f)
+    return out
