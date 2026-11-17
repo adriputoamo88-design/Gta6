@@ -1,0 +1,267 @@
+1
+00:00:00,750 --> 00:00:03,080
+Si sigues buscando diamantes en la capa
+
+2
+00:00:03,080 --> 00:00:04,991
+once, estás perdiendo el tiempo.
+
+3
+00:00:04,991 --> 00:00:07,380
+Desde la 1.18 los diamantes cambiaron de
+
+4
+00:00:07,380 --> 00:00:09,770
+sitio. Hoy te enseño la capa exacta y el
+
+5
+00:00:09,770 --> 00:00:12,099
+método más rápido para llenar el cofre.
+
+6
+00:00:12,849 --> 00:00:15,486
+Antes, la capa buena era la once o la
+
+7
+00:00:15,486 --> 00:00:18,194
+doce. Pero desde la 1.18 el mundo baja
+
+8
+00:00:18,194 --> 00:00:21,045
+hasta la Y -64, y los diamantes aparecen
+
+9
+00:00:21,045 --> 00:00:23,825
+desde la Y 16 hasta el fondo del mundo.
+
+10
+00:00:23,825 --> 00:00:25,820
+Y cuanto más bajas, más hay.
+
+11
+00:00:26,570 --> 00:00:29,739
+La mejor altura es la Y -59, justo encima
+
+12
+00:00:29,739 --> 00:00:32,909
+de la roca madre. Si te da miedo la lava,
+
+13
+00:00:32,909 --> 00:00:35,924
+la Y -53 es casi igual de buena, porque
+
+14
+00:00:35,924 --> 00:00:39,093
+por debajo de la -54 hay muchos más lagos
+
+15
+00:00:39,093 --> 00:00:39,711
+de lava.
+
+16
+00:00:40,461 --> 00:00:42,256
+Para saber a qué altura estás:
+
+17
+00:00:42,256 --> 00:00:44,649
+en Java pulsa F3 y mira la coordenada Y.
+
+18
+00:00:44,649 --> 00:00:47,102
+En Bedrock, activa Mostrar coordenadas en
+
+19
+00:00:47,102 --> 00:00:48,419
+los ajustes del mundo.
+
+20
+00:00:49,169 --> 00:00:51,210
+Antes de bajar, prepara el inventario.
+
+21
+00:00:51,210 --> 00:00:53,252
+Lo imprescindible: un pico de hierro o
+
+22
+00:00:53,252 --> 00:00:55,186
+mejor, porque con uno de madera o de
+
+23
+00:00:55,186 --> 00:00:57,012
+piedra el diamante no suelta nada.
+
+24
+00:00:57,012 --> 00:00:59,161
+Lleva antorchas, un cubo de agua para la
+
+25
+00:00:59,161 --> 00:01:01,364
+lava, comida, y un buen montón de bloques
+
+26
+00:01:01,364 --> 00:01:02,438
+para tapar agujeros.
+
+27
+00:01:03,188 --> 00:01:04,715
+Y un aviso de supervivencia:
+
+28
+00:01:04,715 --> 00:01:06,786
+nunca caves en vertical bajo tus pies.
+
+29
+00:01:06,786 --> 00:01:08,967
+Puedes caer en una cueva o en un lago de
+
+30
+00:01:08,967 --> 00:01:11,148
+lava. Baja siempre en escalera, bloque a
+
+31
+00:01:11,148 --> 00:01:11,529
+bloque.
+
+32
+00:01:12,279 --> 00:01:14,823
+Ahora, el método. Ya en la Y -59, haz un
+
+33
+00:01:14,823 --> 00:01:16,222
+túnel principal largo.
+
+34
+00:01:16,222 --> 00:01:18,893
+Cada tres bloques, abre un túnel lateral a
+
+35
+00:01:18,893 --> 00:01:21,373
+cada lado, dejando dos bloques de pared
+
+36
+00:01:21,373 --> 00:01:23,980
+entre rama y rama. Así ves casi todos los
+
+37
+00:01:23,980 --> 00:01:25,570
+bloques sin picar de más.
+
+38
+00:01:27,520 --> 00:01:29,738
+¿Y por qué no basta con explorar cuevas?
+
+39
+00:01:29,738 --> 00:01:32,011
+Porque el juego reduce la probabilidad de
+
+40
+00:01:32,011 --> 00:01:34,284
+que un diamante aparezca tocando el aire.
+
+41
+00:01:34,284 --> 00:01:36,502
+La mayoría están escondidos dentro de la
+
+42
+00:01:36,502 --> 00:01:38,776
+piedra, y por eso picar en ramas funciona
+
+43
+00:01:38,776 --> 00:01:39,275
+tan bien.
+
+44
+00:01:40,025 --> 00:01:42,329
+Truco de experto: con un pico con Fortuna
+
+45
+00:01:42,329 --> 00:01:44,633
+tres, cada mena puede soltar hasta cuatro
+
+46
+00:01:44,633 --> 00:01:46,882
+diamantes; de media, algo más del doble.
+
+47
+00:01:46,882 --> 00:01:49,074
+Y si aún no lo tienes, recoge las menas
+
+48
+00:01:49,074 --> 00:01:51,209
+con Toque de seda y guárdalas para más
+
+49
+00:01:51,209 --> 00:01:51,715
+adelante.
+
+50
+00:01:52,465 --> 00:01:54,580
+Último aviso: a estas alturas puedes
+
+51
+00:01:54,580 --> 00:01:56,872
+toparte con la Oscuridad profunda y sus
+
+52
+00:01:56,872 --> 00:01:58,987
+ciudades antiguas. Si ves bloques de
+
+53
+00:01:58,987 --> 00:02:00,338
+sculk, camina agachado:
+
+54
+00:02:00,338 --> 00:02:02,218
+así no activas sus sensores y no
+
+55
+00:02:02,218 --> 00:02:03,452
+despiertas al Warden.
+
+56
+00:02:04,202 --> 00:02:06,119
+Y si no te apetece picar, hay otras
+
+57
+00:02:06,119 --> 00:02:07,927
+formas. Los cofres de los tesoros
+
+58
+00:02:07,927 --> 00:02:10,064
+enterrados, los de las herrerías de las
+
+59
+00:02:10,064 --> 00:02:12,255
+aldeas y los de los templos del desierto
+
+60
+00:02:12,255 --> 00:02:13,516
+pueden traer diamantes.
+
+61
+00:02:13,516 --> 00:02:15,543
+No es seguro, pero a veces es un buen
+
+62
+00:02:15,543 --> 00:02:15,871
+atajo.
+
+63
+00:02:16,621 --> 00:02:18,707
+¿Cuántos diamantes has sacado con este
+
+64
+00:02:18,707 --> 00:02:20,792
+método? Cuéntamelo en los comentarios.
+
+65
+00:02:20,792 --> 00:02:22,987
+Suscríbete a Bloque a Bloque y activa la
+
+66
+00:02:22,987 --> 00:02:25,291
+campanita: subimos dos vídeos de Minecraft
+
+67
+00:02:25,291 --> 00:02:27,267
+cada día. Nos vemos en el siguiente.

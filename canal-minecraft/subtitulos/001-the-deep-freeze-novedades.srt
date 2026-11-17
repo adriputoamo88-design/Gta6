@@ -1,0 +1,279 @@
+1
+00:00:00,750 --> 00:00:03,023
+Minecraft ya tiene nombre para su próxima
+
+2
+00:00:03,023 --> 00:00:04,742
+actualización: The Deep Freeze.
+
+3
+00:00:04,742 --> 00:00:07,071
+Trae cuevas de hielo, un zombi congelado y
+
+4
+00:00:07,071 --> 00:00:09,067
+un hielo que se rompe bajo tus pies.
+
+5
+00:00:09,067 --> 00:00:10,952
+Te lo cuento todo en menos de tres
+
+6
+00:00:10,952 --> 00:00:11,395
+minutos.
+
+7
+00:00:12,145 --> 00:00:14,600
+Mojang lo anunció el 15 de noviembre en la
+
+8
+00:00:14,600 --> 00:00:16,879
+TwitchCon. The Deep Freeze es el último
+
+9
+00:00:16,879 --> 00:00:19,334
+game drop de 2026, y ya se puede probar en
+
+10
+00:00:19,334 --> 00:00:20,737
+las versiones de prueba:
+
+11
+00:00:20,737 --> 00:00:22,899
+las snapshots de Java y la Preview de
+
+12
+00:00:22,899 --> 00:00:23,367
+Bedrock.
+
+13
+00:00:24,117 --> 00:00:26,336
+La gran novedad es un bioma subterráneo:
+
+14
+00:00:26,336 --> 00:00:27,446
+las cuevas de hielo.
+
+15
+00:00:27,446 --> 00:00:29,721
+Están hechas sobre todo de hielo compacto
+
+16
+00:00:29,721 --> 00:00:32,052
+y calcita, con zonas de nieve en el suelo.
+
+17
+00:00:32,052 --> 00:00:34,271
+Y ojo, porque dentro también puede haber
+
+18
+00:00:34,271 --> 00:00:34,549
+lava.
+
+19
+00:00:35,299 --> 00:00:37,396
+Del techo cuelgan carámbanos, y no son
+
+20
+00:00:37,396 --> 00:00:39,549
+decoración: pueden caer y hacerte daño.
+
+21
+00:00:39,549 --> 00:00:41,646
+En las versiones de prueba, además, se
+
+22
+00:00:41,646 --> 00:00:43,909
+derriten cerca de las fuentes de luz, así
+
+23
+00:00:43,909 --> 00:00:45,731
+que una antorcha cambia la cueva.
+
+24
+00:00:46,481 --> 00:00:48,807
+También hay cristales de hielo que brillan
+
+25
+00:00:48,807 --> 00:00:50,967
+en la oscuridad y le dan a estas cuevas
+
+26
+00:00:50,967 --> 00:00:52,795
+ese tono azul tan característico.
+
+27
+00:00:53,545 --> 00:00:54,816
+Y aquí viene la trampa.
+
+28
+00:00:54,816 --> 00:00:56,916
+Sobre algunas grietas aparece un hielo
+
+29
+00:00:56,916 --> 00:00:58,408
+quebradizo, el Brittle Ice.
+
+30
+00:00:58,408 --> 00:01:00,729
+Cuando lo pisas se agrieta, las grietas se
+
+31
+00:01:00,729 --> 00:01:02,884
+extienden y, si no te apartas a tiempo,
+
+32
+00:01:02,884 --> 00:01:04,873
+acabas cayendo al barranco de abajo.
+
+33
+00:01:05,623 --> 00:01:07,600
+El nuevo enemigo se llama Frostbite.
+
+34
+00:01:07,600 --> 00:01:09,852
+Es una variante del zombi que vive en las
+
+35
+00:01:09,852 --> 00:01:12,158
+partes más oscuras de las cuevas de hielo.
+
+36
+00:01:12,158 --> 00:01:14,355
+Sus golpes te aplican el nuevo efecto de
+
+37
+00:01:14,355 --> 00:01:16,606
+congelación, y desde lejos te lanza bolas
+
+38
+00:01:16,606 --> 00:01:17,101
+de hielo.
+
+39
+00:01:17,851 --> 00:01:20,088
+Cuando lo derrotas suelta carne podrida y
+
+40
+00:01:20,088 --> 00:01:22,380
+bolas de hielo. En las snapshots, con esas
+
+41
+00:01:22,380 --> 00:01:24,017
+bolas se prepara una poción de
+
+42
+00:01:24,017 --> 00:01:26,255
+congelación, que ralentiza a los enemigos
+
+43
+00:01:26,255 --> 00:01:27,510
+y les va quitando vida.
+
+44
+00:01:27,510 --> 00:01:28,656
+Y un detalle curioso:
+
+45
+00:01:28,656 --> 00:01:30,839
+si pasa bastante tiempo bajo el agua, se
+
+46
+00:01:30,839 --> 00:01:32,421
+convierte en un zombi normal.
+
+47
+00:01:33,171 --> 00:01:35,462
+Para los constructores hay bloques nuevos:
+
+48
+00:01:35,462 --> 00:01:37,752
+ladrillos de hielo compacto y ladrillos de
+
+49
+00:01:37,752 --> 00:01:40,043
+nieve, con sus losas, escaleras y muros, y
+
+50
+00:01:40,043 --> 00:01:41,897
+un conjunto de bloques de calcita.
+
+51
+00:01:42,647 --> 00:01:44,990
+Y en la música, un disco nuevo compuesto
+
+52
+00:01:44,990 --> 00:01:47,393
+por Hyper Potions, y algo que mucha gente
+
+53
+00:01:47,393 --> 00:01:48,799
+llevaba tiempo pidiendo:
+
+54
+00:01:48,799 --> 00:01:51,201
+listas de reproducción en los tocadiscos.
+
+55
+00:01:51,951 --> 00:01:54,231
+¿Y cuándo sale? Mojang todavía no ha dado
+
+56
+00:01:54,231 --> 00:01:56,510
+fecha. Las últimas versiones de prueba ya
+
+57
+00:01:56,510 --> 00:01:58,846
+incluyen las novedades principales y ahora
+
+58
+00:01:58,846 --> 00:02:00,347
+se están puliendo detalles.
+
+59
+00:02:00,347 --> 00:02:02,682
+En cuanto haya fecha, te la contamos aquí.
+
+60
+00:02:03,432 --> 00:02:05,329
+Un consejo si quieres probarlo ya:
+
+61
+00:02:05,329 --> 00:02:07,338
+las versiones de prueba pueden tener
+
+62
+00:02:07,338 --> 00:02:09,514
+errores. Crea un mundo nuevo, o haz una
+
+63
+00:02:09,514 --> 00:02:11,522
+copia de seguridad del tuyo antes de
+
+64
+00:02:11,522 --> 00:02:12,861
+abrirlo en una snapshot.
+
+65
+00:02:13,611 --> 00:02:15,908
+Y tú, ¿bajarías a las cuevas de hielo o te
+
+66
+00:02:15,908 --> 00:02:17,384
+quedarías en la superficie?
+
+67
+00:02:17,384 --> 00:02:18,915
+Déjamelo en los comentarios.
+
+68
+00:02:18,915 --> 00:02:21,102
+Suscríbete a Bloque a Bloque y activa la
+
+69
+00:02:21,102 --> 00:02:23,398
+campanita: subimos dos vídeos de Minecraft
+
+70
+00:02:23,398 --> 00:02:25,366
+cada día. Nos vemos en el siguiente.
