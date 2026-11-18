@@ -25,6 +25,7 @@ THEMES = {
     "cueva":      dict(acc=(84, 232, 218), acc2=GOLD, panel=(10, 12, 18), music="cueva"),
     "hielo":      dict(acc=(140, 210, 255), acc2=(255, 255, 255), panel=(8, 16, 30), music="hielo"),
     "noche":      dict(acc=(176, 120, 255), acc2=GOLD, panel=(12, 8, 24), music="noche"),
+    "end":        dict(acc=(200, 130, 255), acc2=(240, 236, 170), panel=(14, 6, 24), music="noche"),
 }
 
 
@@ -236,8 +237,8 @@ def tex(name):
             a[k + 3, (15 - k - 6) % 16] = (176, 210, 255)
     elif name == "snow": a = _specks(_noise(rng, (240, 246, 250), 5), rng, [(222, 232, 244), (255, 255, 255)], 20)
     elif name == "calcite": a = _specks(_noise(rng, (222, 224, 220), 6), rng, [(196, 198, 198), (240, 240, 236), (180, 182, 184)], 24)
-    elif name == "snow_bricks" or name == "ice_bricks" or name == "bricks":
-        base = {"snow_bricks": (236, 242, 250), "ice_bricks": (150, 190, 248), "bricks": (150, 74, 60)}[name]
+    elif name in ("snow_bricks", "ice_bricks", "bricks", "stone_bricks"):
+        base = {"snow_bricks": (236, 242, 250), "ice_bricks": (150, 190, 248), "bricks": (150, 74, 60), "stone_bricks": (122, 122, 124)}[name]
         a = _noise(rng, base, 6); mort = lerp(base, (0, 0, 0), 0.22)
         for y in (0, 4, 8, 12): a[y, :] = mort
         for r, y0 in enumerate((0, 4, 8, 12)):
@@ -270,6 +271,15 @@ def tex(name):
                 a[top:y0 + 5, x:x + w_] = c
                 a[top, x:x + w_] = tuple(min(255, v + 50) for v in c)
                 x += w_ + (1 if rng.random() < 0.25 else 0)
+    elif name == "end_stone":
+        a = _specks(_noise(rng, (221, 223, 165), 7), rng, [(200, 200, 140), (236, 236, 190), (190, 190, 130)], 30)
+    elif name == "portal_top":
+        a = _specks(_noise(rng, (56, 104, 92), 8), rng, [(40, 84, 74), (80, 130, 116)], 20)
+        a[4:12, 4:12] = (22, 44, 40); a[5:11, 5:11] = (14, 30, 28)
+    elif name == "portal_side":
+        a = _specks(_noise(rng, (221, 223, 165), 7), rng, [(200, 200, 140), (236, 236, 190)], 20)
+        a[:5, :] = _noise(rng, (56, 104, 92), 8)[:5, :]
+        a[5, :] = (36, 70, 62)
     elif name == "sand": a = _specks(_noise(rng, (222, 210, 160), 8), rng, [(204, 190, 140), (236, 226, 182)], 30)
     elif name == "crystal":
         a = _noise(rng, (110, 220, 255), 14)
@@ -485,6 +495,16 @@ SPRITE_MAPS = {
             dict(w=(150, 108, 60), s=(225, 225, 225))),
     "lectern": ([".......kkk", ".....kkwwk", "...kkwwwpk", ".kkwwwpppk", "kppppppPk.", "kkkkpPkk..", "...kpPk...", "...kpPk...", ".kkkpPkkk.", ".kppppppk.", ".kkkkkkkk."],
                 dict(k=(60, 40, 20), w=(240, 236, 220), p=(176, 140, 88), P=(126, 98, 58))),
+    "ender_pearl": ([".kkkk.", "kmllmk", "kmlmdk", "kmmmdk", "kmmddk", ".kkkk."],
+                    dict(k=(10, 40, 40), l=(80, 220, 190), m=(20, 120, 108), d=(10, 74, 66))),
+    "eye_ender": (["..kkkk..", ".kgllgk.", "kgggggdk", "kggppgdk", "kggppgdk", "kgggggdk", ".kgggdk.", "..kkkk.."],
+                  dict(k=(10, 34, 22), g=(64, 176, 124), l=(160, 244, 196), d=(30, 104, 72), p=(12, 20, 16))),
+    "blaze_powder": (["....y....", "...yoy...", "..yooy.y.", ".yoooyoy.", "yooroooy.", "yoooooooy"],
+                     dict(y=(255, 222, 80), o=(240, 142, 30), r=(200, 80, 20))),
+    "pumpkin": (["....bg....", ".oooooooo.", "oooooooooo", "ookkookkoo", "ookkookkoo", "oooooooooo", "okkkkkkkko", "ooookkoooo", ".oooooooo."],
+                dict(o=(232, 132, 22), k=(60, 30, 0), g=(70, 150, 40), b=(110, 76, 30))),
+    "end_crystal": (["...kk...", "..kwpk..", ".kwppPk.", "kwpppPPk", "kpppPPPk", ".kpPPPk.", "..kPPk..", "...kk..."],
+                    dict(k=(60, 10, 50), w=(255, 230, 250), p=(240, 120, 200), P=(190, 60, 160))),
     "hourglass": (["kkkkkkkkk", "kwwwwwwwk", ".kyyyyyk.", "..kyyyk..", "...kyk...", "...kyk...", "..kgygk..", ".kggyggk.", "kgyyyyygk", "kwwwwwwwk", "kkkkkkkkk"],
                   dict(k=(40, 26, 12), w=(150, 108, 60), y=(240, 200, 90), g=(200, 230, 255))),
     "map": (["kkkkkkkkkk", "kppppppppk", "kpggpbbppk", "kpgggpbbpk", "kppgpppbpk", "kpbbppggpk", "kppbbpgppk", "kppppppppk", "kkkkkkkkkk"],
@@ -527,7 +547,7 @@ def _tint(im, col, k):
     return out
 
 
-def terrain_strip(period, B, base_y, amp, seed, trees=True, hcount=None):
+def terrain_strip(period, B, base_y, amp, seed, trees=True, hcount=None, kind="grass"):
     """Franja periódica de terreno de bloques (para scroll infinito)."""
     rnd = random.Random(seed)
     cols = period // B
@@ -540,13 +560,21 @@ def terrain_strip(period, B, base_y, amp, seed, trees=True, hcount=None):
         hs.append(int(round(base_y + v * amp)))
     hh = hcount or 18
     img = Image.new("RGBA", (period, hh * B), (0, 0, 0, 0))
-    T = {n: tile(n, B).convert("RGBA") for n in ("grass_side", "dirt", "stone", "log", "leaves", "deepslate", "coal_ore", "iron_ore")}
+    T = {n: tile(n, B).convert("RGBA") for n in ("grass_side", "dirt", "stone", "log", "leaves", "deepslate", "coal_ore", "iron_ore", "end_stone", "obsidian")}
     for c, h in enumerate(hs):
         top = hh - h
         for r in range(top, hh):
             depth = r - top
-            n = "grass_side" if depth == 0 else ("dirt" if depth < 3 else ("stone" if rnd.random() > 0.06 else rnd.choice(["coal_ore", "iron_ore"])))
+            if kind == "end":
+                n = "end_stone"
+            else:
+                n = "grass_side" if depth == 0 else ("dirt" if depth < 3 else ("stone" if rnd.random() > 0.06 else rnd.choice(["coal_ore", "iron_ore"])))
             img.alpha_composite(T[n], (c * B, r * B))
+        if kind == "end" and trees and rnd.random() < 0.07 and 2 < c < cols - 3:
+            ph_ = rnd.randint(5, min(11, top))
+            for k in range(1, ph_ + 1):
+                img.alpha_composite(T["obsidian"], (c * B, (top - k) * B)); img.alpha_composite(T["obsidian"], ((c + 1) * B, (top - k) * B))
+            continue
         if trees and rnd.random() < 0.09 and 2 < c < cols - 3:
             th_ = rnd.randint(3, 5)
             for k in range(1, th_ + 1):
@@ -565,9 +593,9 @@ class Background:
         self.w, self.h = w, h
         self.theme = theme; self.seed = seed; rnd = random.Random(seed)
         self.parts = []
-        if theme in ("superficie", "noche"):
-            night = theme == "noche"
-            sky = vgrad(self.w, self.h, [(14, 18, 52), (34, 40, 96), (70, 60, 120)] if night else [(84, 140, 240), (138, 186, 255), (200, 226, 255)])
+        if theme in ("superficie", "noche", "end"):
+            night = theme in ("noche", "end"); end = theme == "end"
+            sky = vgrad(self.w, self.h, [(4, 2, 10), (18, 8, 32), (46, 20, 66)] if end else ([(14, 18, 52), (34, 40, 96), (70, 60, 120)] if night else [(84, 140, 240), (138, 186, 255), (200, 226, 255)]))
             self.base = sky.convert("RGBA")
             d = ImageDraw.Draw(self.base)
             if night:
@@ -575,23 +603,25 @@ class Background:
                     x, y = rnd.randint(0, self.w), rnd.randint(0, 620); s = rnd.choice([3, 3, 4, 6])
                     d.rectangle([x, y, x + s, y + s], fill=(255, 255, 255, rnd.randint(120, 255)))
                 mx, my = int(self.w * 0.76), 120
-                d.rectangle([mx, my, mx + 130, my + 130], fill=(236, 236, 214, 255))
-                for (a, b, s) in [(20, 30, 26), (80, 70, 20), (40, 90, 16)]:
-                    d.rectangle([mx + a, my + b, mx + a + s, my + b + s], fill=(200, 200, 182, 255))
+                if not end:
+                    d.rectangle([mx, my, mx + 130, my + 130], fill=(236, 236, 214, 255))
+                    for (a, b, s) in [(20, 30, 26), (80, 70, 20), (40, 90, 16)]:
+                        d.rectangle([mx + a, my + b, mx + a + s, my + b + s], fill=(200, 200, 182, 255))
             else:
                 sun = Image.new("RGBA", (180, 180), (255, 246, 160, 255)); ImageDraw.Draw(sun).rectangle([30, 30, 150, 150], fill=(255, 255, 220, 255))
                 sun = add_glow(sun, (255, 240, 150), 40, 0.8); self.base.alpha_composite(sun, (int(self.w * 0.73) - 40, 70 - 80))
-            fogc = (60, 60, 120) if night else (170, 205, 255)
-            far = terrain_strip(self.w * 2, 40, 7, 3, seed + 1, trees=True, hcount=14)
+            fogc = (50, 24, 80) if end else ((60, 60, 120) if night else (170, 205, 255))
+            kind = "end" if end else "grass"
+            far = terrain_strip(self.w * 2, 40, 7, 3, seed + 1, trees=True, hcount=18 if end else 14, kind=kind)
             self.far = _tint(far, fogc, 0.55 if not night else 0.62)
-            near = terrain_strip(self.w * 2, 72, 4, 2, seed + 2, trees=True, hcount=10)
-            self.near = _tint(near, (10, 10, 40), 0.35) if night else near
+            near = terrain_strip(self.w * 2, 72, 4, 2, seed + 2, trees=not end, hcount=10, kind=kind)
+            self.near = _tint(near, (20, 0, 40) if end else (10, 10, 40), 0.3 if end else 0.35) if night else near
             self.clouds = Image.new("RGBA", (self.w * 2, 300), (0, 0, 0, 0)); cd = ImageDraw.Draw(self.clouds)
             for _ in range(14):
                 cx, cy = rnd.randint(0, self.w * 2 - 400), rnd.randint(20, 220)
                 for _ in range(rnd.randint(2, 4)):
                     w_, h_ = rnd.randint(4, 9) * 24, rnd.randint(2, 3) * 24; ox = rnd.randint(-3, 3) * 24
-                    cd.rectangle([cx + ox, cy, cx + ox + w_, cy + h_], fill=(255, 255, 255, 120 if night else 215))
+                    if not end: cd.rectangle([cx + ox, cy, cx + ox + w_, cy + h_], fill=(255, 255, 255, 120 if night else 215))
             self.mode = "sky"
         else:
             ice = theme == "hielo"
@@ -637,12 +667,12 @@ class Background:
             c = crop_wrap(self.clouds, int(t * 18), self.w); im.alpha_composite(c, (0, 0))
             f = crop_wrap(self.far, int(t * 12), self.w); im.alpha_composite(f, (0, self.h - f.height + 40))
             n = crop_wrap(self.near, int(t * 34), self.w); im.alpha_composite(n, (0, self.h - n.height + 300))
-            if self.theme == "noche":
+            if self.theme in ("noche", "end"):
                 d = ImageDraw.Draw(im)
                 for (x, y, sp, s) in self.parts[:25]:
                     yy = (y * 0.5 + 520 + math.sin(t * sp * 2 + x) * 30); xx = (x + t * 20 * sp) % self.w
                     a = int(140 + 110 * math.sin(t * 3 * sp + x))
-                    d.rectangle([xx, yy, xx + s, yy + s], fill=(200, 255, 120, max(0, a)))
+                    d.rectangle([xx, yy, xx + s, yy + s], fill=((210, 140, 255) if self.theme == "end" else (200, 255, 120)) + (max(0, a),))
             return im.convert("RGB")
         off = int(t * 16) % (self.wall.width - self.w)
         oy = int(30 + math.sin(t * 0.25) * 30)

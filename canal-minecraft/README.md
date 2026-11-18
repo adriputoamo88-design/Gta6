@@ -11,6 +11,8 @@ Vídeo vertical de 1080x1920 que dura menos de 60 s. El diseño respeta las zona
 | 002 | 17/11 19:00 | Así encuentras DIAMANTES en Minecraft (la capa EXACTA) 💎 | 38 s |
 | 003 | 18/11 14:00 | Los 5 MEJORES encantamientos de Minecraft (el nº 1 no sale en la mesa) ✨ | 37 s |
 | 004 | 18/11 19:00 | Cómo conseguir REPARACIÓN fácil en Minecraft (truco del atril) 📚 | 32 s |
+| 005 | 19/11 14:00 | Cómo encontrar una FORTALEZA en Minecraft (y abrir el portal del End) 👁️ | 39 s |
+| 006 | 19/11 19:00 | Cómo matar al ENDER DRAGON paso a paso 🐉 | 44 s |
 
 - `shorts/NNN-....mp4`: el Short listo para subir.
 - `shorts/metadatos/NNN-....txt`: título (con #shorts), descripción, etiquetas y hora de publicación.

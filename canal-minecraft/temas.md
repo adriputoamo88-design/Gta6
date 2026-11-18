@@ -10,11 +10,11 @@ Marca con `[x]` lo publicado y pon el número del vídeo.
 - [x] 002 · Cómo encontrar diamantes rápido: capa Y -59 y minería en ramas (guía, 17/11/2026)
 - [x] 003 · Los 10 mejores encantamientos y en qué herramienta va cada uno (guía, 18/11/2026)
 - [x] 004 · Cómo conseguir Reparación fácil: el truco del atril (guía, 18/11/2026)
+- [x] 005 · Cómo encontrar una fortaleza y activar el portal del End (Short, 19/11/2026)
+- [x] 006 · Cómo derrotar al Ender Dragon paso a paso (Short, 19/11/2026)
 
 ## Próximos (en orden de prioridad)
 ### Guías con muchas búsquedas
-- [ ] Cómo encontrar una fortaleza y activar el portal del End
-- [ ] Cómo derrotar al Ender Dragon paso a paso
 - [ ] Cómo encontrar Netherite (escombros ancestrales) y mejorar tu equipo
 - [ ] Tu primer viaje al Nether: portal, peligros y qué buscar
 - [ ] Cómo conseguir élitros en una ciudad del End
