@@ -12,11 +12,11 @@ Marca con `[x]` lo publicado y pon el número del vídeo.
 - [x] 004 · Cómo conseguir Reparación fácil: el truco del atril (guía, 18/11/2026)
 - [x] 005 · Cómo encontrar una fortaleza y activar el portal del End (Short, 19/11/2026)
 - [x] 006 · Cómo derrotar al Ender Dragon paso a paso (Short, 19/11/2026)
+- [x] 007 · Tu primer viaje al Nether: 5 cosas que debes saber (Short, 20/11/2026)
+- [x] 008 · Cómo encontrar Netherite: capa Y 15 y truco de las camas (Short, 20/11/2026)
 
 ## Próximos (en orden de prioridad)
 ### Guías con muchas búsquedas
-- [ ] Cómo encontrar Netherite (escombros ancestrales) y mejorar tu equipo
-- [ ] Tu primer viaje al Nether: portal, peligros y qué buscar
 - [ ] Cómo conseguir élitros en una ciudad del End
 - [ ] Las pociones más útiles y cómo prepararlas
 - [ ] Cómo conseguir experiencia rápido

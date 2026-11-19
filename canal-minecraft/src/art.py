@@ -26,6 +26,7 @@ THEMES = {
     "hielo":      dict(acc=(140, 210, 255), acc2=(255, 255, 255), panel=(8, 16, 30), music="hielo"),
     "noche":      dict(acc=(176, 120, 255), acc2=GOLD, panel=(12, 8, 24), music="noche"),
     "end":        dict(acc=(200, 130, 255), acc2=(240, 236, 170), panel=(14, 6, 24), music="noche"),
+    "nether":     dict(acc=(255, 122, 60), acc2=GOLD, panel=(26, 6, 6), music="cueva"),
 }
 
 
@@ -280,6 +281,26 @@ def tex(name):
         a = _specks(_noise(rng, (221, 223, 165), 7), rng, [(200, 200, 140), (236, 236, 190)], 20)
         a[:5, :] = _noise(rng, (56, 104, 92), 8)[:5, :]
         a[5, :] = (36, 70, 62)
+    elif name in ("netherrack", "nether_quartz_ore", "nether_gold_ore"):
+        a = _specks(_noise(rng, (112, 36, 36), 10), rng, [(84, 22, 24), (140, 54, 50), (70, 16, 18)], 34)
+        if name == "nether_quartz_ore": a = _ore(a, rng, (200, 190, 180), (236, 230, 222), (255, 255, 255))
+        if name == "nether_gold_ore": a = _ore(a, rng, (190, 140, 20), (250, 214, 60), (255, 246, 160), 6)
+    elif name == "glowstone":
+        a = _specks(_noise(rng, (232, 190, 104), 14), rng, [(255, 236, 160), (190, 140, 70), (255, 214, 120)], 40, (1, 3))
+    elif name == "soul_sand":
+        a = _specks(_noise(rng, (84, 64, 52), 8), rng, [(62, 46, 38), (104, 82, 66)], 30)
+    elif name in ("debris_side", "debris_top"):
+        a = _specks(_noise(rng, (128, 90, 78), 8), rng, [(150, 112, 98), (96, 64, 56)], 20)
+        if name == "debris_side":
+            for (cx, cy, r) in ((5, 5, 3), (11, 11, 3), (12, 3, 2), (3, 12, 2)):
+                for y in range(16):
+                    for x in range(16):
+                        if abs(math.hypot(x - cx, y - cy) - r) < 0.6: a[y, x] = (72, 46, 40)
+        else:
+            for y in range(16):
+                for x in range(16):
+                    rr = max(abs(x - 7.5), abs(y - 7.5))
+                    if int(rr) % 3 == 0: a[y, x] = (82, 54, 46)
     elif name == "sand": a = _specks(_noise(rng, (222, 210, 160), 8), rng, [(204, 190, 140), (236, 226, 182)], 30)
     elif name == "crystal":
         a = _noise(rng, (110, 220, 255), 14)
@@ -505,6 +526,14 @@ SPRITE_MAPS = {
                 dict(o=(232, 132, 22), k=(60, 30, 0), g=(70, 150, 40), b=(110, 76, 30))),
     "end_crystal": (["...kk...", "..kwpk..", ".kwppPk.", "kwpppPPk", "kpppPPPk", ".kpPPPk.", "..kPPk..", "...kk..."],
                     dict(k=(60, 10, 50), w=(255, 230, 250), p=(240, 120, 200), P=(190, 60, 160))),
+    "nether_portal": (["oooooo", "oppPpo", "oPpppo", "oppPpo", "opPppo", "oppPpo", "oPpppo", "oooooo"],
+                      dict(o=(34, 22, 52), p=(140, 60, 220), P=(196, 130, 255))),
+    "gold_ingot": (["..kkkkkkk.", ".kllllllmk", "kllmmmmmdk", "kmmmmmmddk", "kkkkkkkkk."],
+                   dict(k=(120, 80, 10), l=(255, 246, 160), m=(250, 210, 60), d=(190, 140, 20))),
+    "netherite_ingot": (["..kkkkkkk.", ".kllllllmk", "kllmmmmmdk", "kmmmmmmddk", "kkkkkkkkk."],
+                        dict(k=(16, 12, 14), l=(132, 118, 126), m=(80, 70, 76), d=(46, 40, 44))),
+    "potion_fire": (["...kkk...", "...kck...", "...kgk...", "..kgggk..", ".kpwppppk", "kppwppppk", "kpppppppk", "kpppppddk", ".kpppddk.", "..kkkkk.."],
+                    dict(k=(30, 30, 40), c=(150, 108, 60), g=(200, 220, 255), w=(255, 255, 255), p=(255, 150, 40), d=(220, 90, 20))),
     "hourglass": (["kkkkkkkkk", "kwwwwwwwk", ".kyyyyyk.", "..kyyyk..", "...kyk...", "...kyk...", "..kgygk..", ".kggyggk.", "kgyyyyygk", "kwwwwwwwk", "kkkkkkkkk"],
                   dict(k=(40, 26, 12), w=(150, 108, 60), y=(240, 200, 90), g=(200, 230, 255))),
     "map": (["kkkkkkkkkk", "kppppppppk", "kpggpbbppk", "kpgggpbbpk", "kppgpppbpk", "kpbbppggpk", "kppbbpgppk", "kppppppppk", "kkkkkkkkkk"],
@@ -626,13 +655,16 @@ class Background:
         else:
             ice = theme == "hielo"
             B = 96
-            names = (["packed_ice"] * 6 + ["ice"] * 2 + ["snow", "calcite"]) if ice else (["stone"] * 7 + ["deepslate"] * 4 + ["coal_ore", "iron_ore", "deep_diamond_ore", "gold_ore", "redstone_ore"])
+            nether = theme == "nether"
+            names = (["packed_ice"] * 6 + ["ice"] * 2 + ["snow", "calcite"]) if ice else (
+                (["netherrack"] * 9 + ["nether_quartz_ore", "nether_gold_ore", "glowstone", "soul_sand", "soul_sand"]) if nether else
+                (["stone"] * 7 + ["deepslate"] * 4 + ["coal_ore", "iron_ore", "deep_diamond_ore", "gold_ore", "redstone_ore"]))
             wall = Image.new("RGBA", (self.w + B * 8, self.h + B), (0, 0, 0, 255))
             for y in range(0, self.h + B, B):
                 for x in range(0, self.w + B * 8, B):
                     wall.alpha_composite(tile(rnd.choice(names), B).convert("RGBA"), (x, y))
             # oscurecer con viñeta y luz cálida/fría
-            dark = Image.new("RGBA", wall.size, ((6, 14, 30) if ice else (6, 6, 10)) + (150 if ice else 175,))
+            dark = Image.new("RGBA", wall.size, ((6, 14, 30) if ice else ((22, 4, 4) if nether else (6, 6, 10))) + (150 if ice else 175,))
             wall.alpha_composite(dark)
             light = Image.new("L", wall.size, 0); ld = ImageDraw.Draw(light)
             for _ in range(6):
