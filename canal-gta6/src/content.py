@@ -324,4 +324,5 @@ PRON = [
  ("Nintendo Switch 2", "Nintendo Suitch dos"), ("Switch", "Suitch"), ("Xbox One", "Équisbox Uan"), ("Uan", "Uan"),
  ("gigas", "gigas"), ("GPS", "ge pe ese"), ("Ike", "Áik"),
  ("PSSR", "pe ese ese erre"), ("CPU", "ce pe u"), ("Red Dead Redemption 2", "Red Ded Redémshon dos"), ("Sensor Tower", "Sénsor Táuer"), ("ray tracing", "rei tréisin"),
+ ("The Legend of Zelda: Ocarina of Time", "Ze Léyend of Zelda, Ocarina of Táim"), ("Metacritic", "Metacrític"), ("OpenCritic", "Ópencrític"), ("IGN", "i ye ene"), ("GameSpot", "Guéimspot"), ("Eurogamer", "Iurogueimer"), ("GamesRadar", "Guéims Radar"),
 ]
