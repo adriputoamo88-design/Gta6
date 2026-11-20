@@ -67,7 +67,7 @@ def text_img(txt, fname, size, fill=(255, 255, 255), stroke=0, stroke_fill=(0, 0
 
 
 def wrap(txt, fname, size, max_w):
-    f = font(fname, size); words = txt.split(); lines = []; cur = ""
+    f = font(fname, size); words = txt.replace("GTA 6", "GTA\u00a06").replace("GTA 5", "GTA\u00a05").split(" "); lines = []; cur = ""
     for wd in words:
         t = (cur + " " + wd).strip()
         if f.getbbox(t)[2] > max_w and cur:

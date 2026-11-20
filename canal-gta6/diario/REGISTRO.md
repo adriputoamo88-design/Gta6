@@ -9,3 +9,5 @@
 | 2026-11-17 | s02-reservas-record | Las RESERVAS de GTA 6 son una LOCURA 💸 #Shorts | Mar 17/11 · 21:00 |
 | 2026-11-19 | e03-metacritic-99 | GTA 6 saca un 99 en METACRITIC: lo que dice la crítica (y sus pegas) | Jue 19/11 · 12:00 |
 | 2026-11-19 | s03-no-me-deja-jugar | ¿GTA 6 NO te deja jugar? Prueba esto 🔧 #Shorts | Jue 19/11 · 21:00 |
+| 2026-11-20 | e04-trucos-confirmados | TRUCOS de GTA 6 CONFIRMADOS: cómo se DESBLOQUEAN y cómo se ponen (PS5 y Xbox) | Vie 20/11 · 15:00 |
+| 2026-11-20 | s04-record-ventas | GTA 6 ha DESTROZADO el récord de GTA 5 💥 #Shorts | Vie 20/11 · 21:00 |
