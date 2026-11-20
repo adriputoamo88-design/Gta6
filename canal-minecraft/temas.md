@@ -14,11 +14,11 @@ Marca con `[x]` lo publicado y pon el número del vídeo.
 - [x] 006 · Cómo derrotar al Ender Dragon paso a paso (Short, 19/11/2026)
 - [x] 007 · Tu primer viaje al Nether: 5 cosas que debes saber (Short, 20/11/2026)
 - [x] 008 · Cómo encontrar Netherite: capa Y 15 y truco de las camas (Short, 20/11/2026)
+- [x] 009 · Cómo conseguir élitros en una ciudad del End (Short, 21/11/2026)
+- [x] 010 · Las 5 pociones más útiles y cómo hacerlas (Short, 21/11/2026)
 
 ## Próximos (en orden de prioridad)
 ### Guías con muchas búsquedas
-- [ ] Cómo conseguir élitros en una ciudad del End
-- [ ] Las pociones más útiles y cómo prepararlas
 - [ ] Cómo conseguir experiencia rápido
 - [ ] Cómo hacer un faro (beacon) y qué efectos da
 - [ ] Granja de hierro sencilla: cómo funciona y cómo hacerla

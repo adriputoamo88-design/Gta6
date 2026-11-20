@@ -301,6 +301,10 @@ def tex(name):
                 for x in range(16):
                     rr = max(abs(x - 7.5), abs(y - 7.5))
                     if int(rr) % 3 == 0: a[y, x] = (82, 54, 46)
+    elif name == "purpur":
+        a = _noise(rng, (168, 124, 168), 6)
+        for k in (0, 8): a[k, :] = (196, 154, 196); a[:, k] = (196, 154, 196)
+        for k in (7, 15): a[k, :] = (132, 92, 132); a[:, k] = (132, 92, 132)
     elif name == "sand": a = _specks(_noise(rng, (222, 210, 160), 8), rng, [(204, 190, 140), (236, 226, 182)], 30)
     elif name == "crystal":
         a = _noise(rng, (110, 220, 255), 14)
@@ -534,6 +538,14 @@ SPRITE_MAPS = {
                         dict(k=(16, 12, 14), l=(132, 118, 126), m=(80, 70, 76), d=(46, 40, 44))),
     "potion_fire": (["...kkk...", "...kck...", "...kgk...", "..kgggk..", ".kpwppppk", "kppwppppk", "kpppppppk", "kpppppddk", ".kpppddk.", "..kkkkk.."],
                     dict(k=(30, 30, 40), c=(150, 108, 60), g=(200, 220, 255), w=(255, 255, 255), p=(255, 150, 40), d=(220, 90, 20))),
+    "elytra": (["kk......kk", "kwk....kwk", "kwmk..kmwk", "kwmmkkmmwk", "kmmmmmmmmk", "kmmdmmdmmk", "kmmdmmdmmk", ".kmdkkdmk.", ".kdk..kdk.", "..k....k.."],
+               dict(k=(30, 24, 40), w=(214, 214, 228), m=(146, 146, 166), d=(96, 96, 116))),
+    "firework": (["...k...", "..krk..", ".krrrk.", ".kwwwk.", ".krrrk.", ".krrrk.", "..kbk..", "..kbk..", "...k..."],
+                 dict(k=(40, 10, 10), r=(220, 40, 40), w=(240, 240, 240), b=(150, 108, 60))),
+    "bucket_milk": (["kkkkkkkkkk", "kwwwwbwwwk", "kwwwwwwwwk", ".kssssssk.", ".ksllsssk.", ".ksssssdk.", "..kssssk..", "..kkkkkk.."],
+                    dict(k=(40, 40, 46), b=(225, 225, 225), w=(250, 250, 250), s=(190, 190, 196), l=(240, 240, 244), d=(130, 130, 136))),
+    "potion_heal": (["...kkk...", "...kck...", "...kgk...", "..kgggk..", ".kpwppppk", "kppwppppk", "kpppppppk", "kpppppddk", ".kpppddk.", "..kkkkk.."],
+                    dict(k=(30, 30, 40), c=(150, 108, 60), g=(200, 220, 255), w=(255, 255, 255), p=(240, 50, 70), d=(170, 20, 40))),
     "hourglass": (["kkkkkkkkk", "kwwwwwwwk", ".kyyyyyk.", "..kyyyk..", "...kyk...", "...kyk...", "..kgygk..", ".kggyggk.", "kgyyyyygk", "kwwwwwwwk", "kkkkkkkkk"],
                   dict(k=(40, 26, 12), w=(150, 108, 60), y=(240, 200, 90), g=(200, 230, 255))),
     "map": (["kkkkkkkkkk", "kppppppppk", "kpggpbbppk", "kpgggpbbpk", "kppgpppbpk", "kpbbppggpk", "kppbbpgppk", "kppppppppk", "kkkkkkkkkk"],

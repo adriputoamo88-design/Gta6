@@ -15,6 +15,8 @@ Vídeo vertical de 1080x1920 que dura menos de 60 s. El diseño respeta las zona
 | 006 | 19/11 19:00 | Cómo matar al ENDER DRAGON paso a paso 🐉 | 44 s |
 | 007 | 20/11 14:00 | Tu PRIMER viaje al NETHER: 5 cosas que debes saber 🔥 | 44 s |
 | 008 | 20/11 19:00 | Cómo encontrar NETHERITE rápido en Minecraft (la capa EXACTA) ⛏️ | 41 s |
+| 009 | 21/11 14:00 | Cómo conseguir ÉLITROS en Minecraft (las alas) 🪽 | 43 s |
+| 010 | 21/11 19:00 | Las 5 POCIONES más útiles de Minecraft (y cómo hacerlas) 🧪 | 41 s |
 
 - `shorts/NNN-....mp4`: el Short listo para subir.
 - `shorts/metadatos/NNN-....txt`: título (con #shorts), descripción, etiquetas y hora de publicación.
