@@ -106,9 +106,9 @@ def build_scene(sc, th, dur, vid):
         num = text_img(f"#{sc['n']}", ANTON, 330, fill=acc, glow=acc, glow_r=24)
         items.append(Item(num, 200, 500 - num.height // 2, 0.0, "pop", 0.45))
         items.append(Item(text_img("CONSEJO", MB, 44, fill=acc2), 760, 290, 0.15, "fade"))
-        h = text_img(wrap(sc["h"].upper(), ANTON, 120, 950), ANTON, 120, max_w=1000)
+        h = text_img(wrap(sc["h"].upper(), ANTON, 120, 950), ANTON, 120, max_w=1000, spacing=-0.05)
         items.append(Item(h, 760, 350, 0.25, "left"))
-        items.append(Item(text_img(wrap(sc["s"], MX, 46, 980), MX, 46, fill=(230, 230, 240), max_w=1000), 765, 370 + h.height, 0.6, "up"))
+        items.append(Item(text_img(wrap(sc["s"], MX, 46, 980), MX, 46, fill=(230, 230, 240), max_w=1000), 765, 380 + h.height, 0.6, "up"))
     elif t == "qa":
         items.append(Item(text_img(f"PREGUNTA {sc['n']}", MB, 46, fill=acc2), W // 2, 200, 0.0, "fade", center=True))
         q = text_img(wrap(sc["q"].upper(), ANTON, 130, 1500), ANTON, 130, glow=acc, glow_r=14, max_w=1600, align="center")

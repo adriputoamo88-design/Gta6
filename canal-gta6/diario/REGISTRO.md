@@ -11,3 +11,5 @@
 | 2026-11-19 | s03-no-me-deja-jugar | ¿GTA 6 NO te deja jugar? Prueba esto 🔧 #Shorts | Jue 19/11 · 21:00 |
 | 2026-11-20 | e04-trucos-confirmados | TRUCOS de GTA 6 CONFIRMADOS: cómo se DESBLOQUEAN y cómo se ponen (PS5 y Xbox) | Vie 20/11 · 15:00 |
 | 2026-11-20 | s04-record-ventas | GTA 6 ha DESTROZADO el récord de GTA 5 💥 #Shorts | Vie 20/11 · 21:00 |
+| 2026-11-21 | e05-dinero-metodos-reales | Cómo GANAR DINERO en GTA 6: los métodos que SÍ funcionan (ya probados) | Sáb 21/11 · 17:00 |
+| 2026-11-21 | s05-huevo-de-pascua | Rockstar escondió un HUEVO de Pascua… literal 🥚 #Shorts | Sáb 21/11 · 21:00 |
