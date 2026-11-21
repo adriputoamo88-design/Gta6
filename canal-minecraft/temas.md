@@ -16,11 +16,11 @@ Marca con `[x]` lo publicado y pon el número del vídeo.
 - [x] 008 · Cómo encontrar Netherite: capa Y 15 y truco de las camas (Short, 20/11/2026)
 - [x] 009 · Cómo conseguir élitros en una ciudad del End (Short, 21/11/2026)
 - [x] 010 · Las 5 pociones más útiles y cómo hacerlas (Short, 21/11/2026)
+- [x] 011 · 5 formas de conseguir experiencia rápido (Short, 22/11/2026)
+- [x] 012 · Cómo hacer un faro y todos sus poderes (Short, 22/11/2026)
 
 ## Próximos (en orden de prioridad)
 ### Guías con muchas búsquedas
-- [ ] Cómo conseguir experiencia rápido
-- [ ] Cómo hacer un faro (beacon) y qué efectos da
 - [ ] Granja de hierro sencilla: cómo funciona y cómo hacerla
 - [ ] Granja de cultivos automática con aldeanos
 - [ ] Cámaras de desafío: llaves, Breeze y la maza
