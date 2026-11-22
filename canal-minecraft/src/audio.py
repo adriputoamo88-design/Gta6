@@ -20,7 +20,7 @@ PRON = [
     ("Brittle Ice", "Brítel Áis"), ("Frostbite", "Fróstbait"), ("Hyper Potions", "Jáiper Póshons"),
     ("Warden", "Uórden"), ("sculk", "esculk"), ("F3", "efe tres"), ("1.18", "uno punto dieciocho"),
     ("1.17", "uno punto diecisiete"), ("Netherite", "Néziraít"), ("Nether", "Néder"), ("End", "End"),
-    ("Ender Dragon", "Énder Drágon"), ("shulkers", "shúlkers"), ("shulker", "shúlker"), ("piglins", "píglins"), ("piglin", "píglin"), ("ghasts", "gásts"), ("ghast", "gást"), ("netherita", "neterita"), ("Enderman", "Énderman"), ("blaze", "bléis"), ("blazes", "bléises"), ("creeper", "críper"), ("creepers", "crípers"), ("Ender", "Énder"), ("YouTube", "Yutub"), ("mods", "mods"),
+    ("Ender Dragon", "Énder Drágon"), ("Dinnerbone", "Díner bon"), ("jeb", "yeb"), ("shulkers", "shúlkers"), ("shulker", "shúlker"), ("piglins", "píglins"), ("piglin", "píglin"), ("ghasts", "gásts"), ("ghast", "gást"), ("netherita", "neterita"), ("Enderman", "Énderman"), ("blaze", "bléis"), ("blazes", "bléises"), ("creeper", "críper"), ("creepers", "crípers"), ("Ender", "Énder"), ("YouTube", "Yutub"), ("mods", "mods"),
     ("Toque de seda", "Toque de seda"), ("Bloque a Bloque", "Bloque a Bloque"), ("XP", "equis pe"),
 ]
 

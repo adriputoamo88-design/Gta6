@@ -18,10 +18,11 @@ Marca con `[x]` lo publicado y pon el número del vídeo.
 - [x] 010 · Las 5 pociones más útiles y cómo hacerlas (Short, 21/11/2026)
 - [x] 011 · 5 formas de conseguir experiencia rápido (Short, 22/11/2026)
 - [x] 012 · Cómo hacer un faro y todos sus poderes (Short, 22/11/2026)
+- [x] 013 · Cómo funciona una granja de hierro (Java; y qué cambia en Bedrock) (Short, 23/11/2026)
+- [x] 014 · 5 secretos de Minecraft que casi nadie conoce (Short, 23/11/2026)
 
 ## Próximos (en orden de prioridad)
 ### Guías con muchas búsquedas
-- [ ] Granja de hierro sencilla: cómo funciona y cómo hacerla
 - [ ] Granja de cultivos automática con aldeanos
 - [ ] Cámaras de desafío: llaves, Breeze y la maza
 - [ ] Cómo encontrar una ciudad antigua sin despertar al Warden
@@ -40,7 +41,6 @@ Marca con `[x]` lo publicado y pon el número del vídeo.
 - [ ] Cómo sobrevivir en hardcore: 10 reglas
 
 ### Curiosidades (buenas para el segundo vídeo del día)
-- [ ] 10 datos de Minecraft que casi nadie conoce
 - [ ] Los mobs más peligrosos, del menos al más letal
 - [ ] Java vs Bedrock: todas las diferencias que importan
 - [ ] Los comandos más útiles para mundos de un jugador

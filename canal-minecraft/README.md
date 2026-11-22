@@ -19,6 +19,8 @@ Vídeo vertical de 1080x1920 que dura menos de 60 s. El diseño respeta las zona
 | 010 | 21/11 19:00 | Las 5 POCIONES más útiles de Minecraft (y cómo hacerlas) 🧪 | 41 s |
 | 011 | 22/11 14:00 | 5 formas de conseguir EXPERIENCIA rápido en Minecraft ✨ | 39 s |
 | 012 | 22/11 19:00 | Cómo hacer un FARO en Minecraft (y todos sus poderes) 🔦 | 41 s |
+| 013 | 23/11 14:00 | Cómo funciona una GRANJA DE HIERRO en Minecraft (Java) ⚙️ | 36 s |
+| 014 | 23/11 19:00 | 5 SECRETOS de Minecraft que casi nadie conoce 🤫 | 31 s |
 
 - `shorts/NNN-....mp4`: el Short listo para subir.
 - `shorts/metadatos/NNN-....txt`: título (con #shorts), descripción, etiquetas y hora de publicación.
