@@ -13,3 +13,5 @@
 | 2026-11-20 | s04-record-ventas | GTA 6 ha DESTROZADO el récord de GTA 5 💥 #Shorts | Vie 20/11 · 21:00 |
 | 2026-11-21 | e05-dinero-metodos-reales | Cómo GANAR DINERO en GTA 6: los métodos que SÍ funcionan (ya probados) | Sáb 21/11 · 17:00 |
 | 2026-11-21 | s05-huevo-de-pascua | Rockstar escondió un HUEVO de Pascua… literal 🥚 #Shorts | Sáb 21/11 · 21:00 |
+| 2026-11-22 | e06-critica-vs-usuarios | GTA 6: un 99 de la CRÍTICA… y un 5 de los USUARIOS. ¿Qué está pasando? | Dom 22/11 · 17:00 |
+| 2026-11-22 | s06-cuanto-dura | ¿Cuánto DURA GTA 6? ⏱️ #Shorts | Dom 22/11 · 21:00 |

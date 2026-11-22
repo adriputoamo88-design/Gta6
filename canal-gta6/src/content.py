@@ -326,4 +326,5 @@ PRON = [
  ("PSSR", "pe ese ese erre"), ("CPU", "ce pe u"), ("Red Dead Redemption 2", "Red Ded Redémshon dos"), ("Sensor Tower", "Sénsor Táuer"), ("ray tracing", "rei tréisin"),
  ("The Legend of Zelda: Ocarina of Time", "Ze Léyend of Zelda, Ocarina of Táim"), ("Metacritic", "Metacrític"), ("OpenCritic", "Ópencrític"), ("IGN", "i ye ene"), ("GameSpot", "Guéimspot"), ("Eurogamer", "Iurogueimer"), ("GamesRadar", "Guéims Radar"),
  ("L1", "ele uno"), ("R1", "erre uno"), ("LB", "ele be"), ("RB", "erre be"), ("TweakTown", "Tuíktaun"),
+ ("review bombing", "riviú bóming"), ("PlayStation Store", "Pléisteishon Estor"),
 ]

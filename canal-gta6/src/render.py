@@ -172,7 +172,7 @@ def build_scene(sc, th, dur, vid):
         for side, (lab, lines, x0, col) in enumerate([(lt, sc["left"], 170, (170, 170, 190)), (rt, sc["right"], 1010, acc)]):
             colp = rrect(740, 560, 30, (0, 0, 0, 120), outline=col + (255,), ow=4)
             items.append(Item(colp, x0, 280, 0.15 + side * 0.15, "up"))
-            items.append(Item(text_img(lab, ANTON, 80, fill=col, glow=col if side else None, glow_r=10), x0 + 370, 300, 0.25 + side * 0.15, "fade", center=True))
+            items.append(Item(text_img(lab, ANTON, 80, fill=WHITE if side else col, glow=col if side else None, glow_r=10), x0 + 370, 300, 0.25 + side * 0.15, "fade", center=True))
         n = max(len(sc["left"]), len(sc["right"]))
         times = reveal_times(n * 2, dur, 0.6)
         for i in range(n):
