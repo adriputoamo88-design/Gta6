@@ -238,8 +238,8 @@ def tex(name):
             a[k + 3, (15 - k - 6) % 16] = (176, 210, 255)
     elif name == "snow": a = _specks(_noise(rng, (240, 246, 250), 5), rng, [(222, 232, 244), (255, 255, 255)], 20)
     elif name == "calcite": a = _specks(_noise(rng, (222, 224, 220), 6), rng, [(196, 198, 198), (240, 240, 236), (180, 182, 184)], 24)
-    elif name in ("snow_bricks", "ice_bricks", "bricks", "stone_bricks"):
-        base = {"snow_bricks": (236, 242, 250), "ice_bricks": (150, 190, 248), "bricks": (150, 74, 60), "stone_bricks": (122, 122, 124)}[name]
+    elif name in ("snow_bricks", "ice_bricks", "bricks", "stone_bricks", "tuff_bricks"):
+        base = {"snow_bricks": (236, 242, 250), "ice_bricks": (150, 190, 248), "bricks": (150, 74, 60), "stone_bricks": (122, 122, 124), "tuff_bricks": (108, 112, 102)}[name]
         a = _noise(rng, base, 6); mort = lerp(base, (0, 0, 0), 0.22)
         for y in (0, 4, 8, 12): a[y, :] = mort
         for r, y0 in enumerate((0, 4, 8, 12)):
@@ -305,8 +305,9 @@ def tex(name):
         a = _noise(rng, (168, 124, 168), 6)
         for k in (0, 8): a[k, :] = (196, 154, 196); a[:, k] = (196, 154, 196)
         for k in (7, 15): a[k, :] = (132, 92, 132); a[:, k] = (132, 92, 132)
-    elif name in ("iron_block", "gold_block", "diamond_block", "emerald_block"):
-        base = {"iron_block": (210, 210, 214), "gold_block": (246, 208, 60), "diamond_block": (98, 222, 214), "emerald_block": (50, 200, 100)}[name]
+    elif name in ("iron_block", "gold_block", "diamond_block", "emerald_block", "copper_block", "heavy_core"):
+        base = {"iron_block": (210, 210, 214), "gold_block": (246, 208, 60), "diamond_block": (98, 222, 214), "emerald_block": (50, 200, 100),
+                "copper_block": (200, 112, 76), "heavy_core": (78, 78, 88)}[name]
         a = _noise(rng, base, 5); hi = lerp(base, (255, 255, 255), 0.45); lo = lerp(base, (0, 0, 0), 0.3)
         a[0, :] = hi; a[:, 0] = hi; a[15, :] = lo; a[:, 15] = lo
         a[3:13, 3] = lo; a[3, 3:13] = lo; a[12, 3:13] = hi; a[3:13, 12] = hi
@@ -567,6 +568,12 @@ SPRITE_MAPS = {
                  dict(k=(70, 60, 50), w=(236, 226, 200))),
     "lightning": (["...yyy.", "..yyy..", ".yyy...", "yyyyyy.", "..yyy..", ".yyy...", "yyy....", "yy....."],
                   dict(y=(255, 232, 80))),
+    "trial_key": ([".kkk.......", "kcCck......", "kC.Ckkkkkkk", "kcCcCcCcCck", ".kkk.kckck.", ".....kk.kk."],
+                  dict(k=(70, 30, 10), c=(210, 120, 70), C=(244, 174, 114))),
+    "breeze_rod": ([".kk.", "kwck", "kcwk", "kwck", "kcwk", "kwck", "kcwk", "kwck", "kcwk", ".kk."],
+                   dict(k=(50, 60, 90), w=(230, 240, 255), c=(150, 190, 230))),
+    "ominous_bottle": (["...kkk...", "...kck...", "...kgk...", "..kgggk..", ".kpwppppk", "kppwppppk", "kpppppppk", "kpppppddk", ".kpppddk.", "..kkkkk.."],
+                       dict(k=(20, 20, 26), c=(90, 70, 50), g=(170, 190, 200), w=(200, 230, 230), p=(50, 96, 100), d=(26, 52, 56))),
     "hourglass": (["kkkkkkkkk", "kwwwwwwwk", ".kyyyyyk.", "..kyyyk..", "...kyk...", "...kyk...", "..kgygk..", ".kggyggk.", "kgyyyyygk", "kwwwwwwwk", "kkkkkkkkk"],
                   dict(k=(40, 26, 12), w=(150, 108, 60), y=(240, 200, 90), g=(200, 230, 255))),
     "map": (["kkkkkkkkkk", "kppppppppk", "kpggpbbppk", "kpgggpbbpk", "kppgpppbpk", "kpbbppggpk", "kppbbpgppk", "kppppppppk", "kkkkkkkkkk"],

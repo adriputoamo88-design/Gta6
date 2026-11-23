@@ -20,11 +20,12 @@ Marca con `[x]` lo publicado y pon el número del vídeo.
 - [x] 012 · Cómo hacer un faro y todos sus poderes (Short, 22/11/2026)
 - [x] 013 · Cómo funciona una granja de hierro (Java; y qué cambia en Bedrock) (Short, 23/11/2026)
 - [x] 014 · 5 secretos de Minecraft que casi nadie conoce (Short, 23/11/2026)
+- [x] 015 · Cámaras de desafío: llaves, Breeze y cómo conseguir la maza (Short, 24/11/2026)
+- [x] 016 · La historia de Minecraft en 40 segundos (Short, 24/11/2026)
 
 ## Próximos (en orden de prioridad)
 ### Guías con muchas búsquedas
-- [ ] Granja de cultivos automática con aldeanos
-- [ ] Cámaras de desafío: llaves, Breeze y la maza
+- [ ] Granja de cultivos automática con aldeanos (comprobar bien cómo se recogen los cultivos en Java y en Bedrock antes de hacerla)
 - [ ] Cómo encontrar una ciudad antigua sin despertar al Warden
 - [ ] Cómo encontrar chunks de slime
 - [ ] Comercio con piglins: qué dan por oro
@@ -46,7 +47,6 @@ Marca con `[x]` lo publicado y pon el número del vídeo.
 - [ ] Los comandos más útiles para mundos de un jugador
 - [ ] Todos los biomas, explicados en pocos minutos
 - [ ] Redstone para principiantes: puerta automática con 5 bloques
-- [ ] Historia de Minecraft en 3 minutos
 
 ### Noticias (cuando toque)
 - [ ] The Deep Freeze: fecha de salida confirmada (cuando Mojang la anuncie)

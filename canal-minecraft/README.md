@@ -21,6 +21,8 @@ Vídeo vertical de 1080x1920 que dura menos de 60 s. El diseño respeta las zona
 | 012 | 22/11 19:00 | Cómo hacer un FARO en Minecraft (y todos sus poderes) 🔦 | 41 s |
 | 013 | 23/11 14:00 | Cómo funciona una GRANJA DE HIERRO en Minecraft (Java) ⚙️ | 36 s |
 | 014 | 23/11 19:00 | 5 SECRETOS de Minecraft que casi nadie conoce 🤫 | 31 s |
+| 015 | 24/11 14:00 | Cámaras de DESAFÍO: llaves, Breeze y cómo conseguir la MAZA 🔨 | 47 s |
+| 016 | 24/11 19:00 | La HISTORIA de Minecraft en 40 segundos 📜 | 40 s |
 
 - `shorts/NNN-....mp4`: el Short listo para subir.
 - `shorts/metadatos/NNN-....txt`: título (con #shorts), descripción, etiquetas y hora de publicación.
