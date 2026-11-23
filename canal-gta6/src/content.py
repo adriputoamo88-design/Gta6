@@ -327,4 +327,5 @@ PRON = [
  ("The Legend of Zelda: Ocarina of Time", "Ze Léyend of Zelda, Ocarina of Táim"), ("Metacritic", "Metacrític"), ("OpenCritic", "Ópencrític"), ("IGN", "i ye ene"), ("GameSpot", "Guéimspot"), ("Eurogamer", "Iurogueimer"), ("GamesRadar", "Guéims Radar"),
  ("L1", "ele uno"), ("R1", "erre uno"), ("LB", "ele be"), ("RB", "erre be"), ("TweakTown", "Tuíktaun"),
  ("review bombing", "riviú bóming"), ("PlayStation Store", "Pléisteishon Estor"),
+ ("Take-Two", "Téik Tu"),
 ]

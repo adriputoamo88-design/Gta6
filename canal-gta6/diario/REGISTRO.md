@@ -15,3 +15,5 @@
 | 2026-11-21 | s05-huevo-de-pascua | Rockstar escondió un HUEVO de Pascua… literal 🥚 #Shorts | Sáb 21/11 · 21:00 |
 | 2026-11-22 | e06-critica-vs-usuarios | GTA 6: un 99 de la CRÍTICA… y un 5 de los USUARIOS. ¿Qué está pasando? | Dom 22/11 · 17:00 |
 | 2026-11-22 | s06-cuanto-dura | ¿Cuánto DURA GTA 6? ⏱️ #Shorts | Dom 22/11 · 21:00 |
+| 2026-11-23 | e07-cierres-y-progreso | ¿GTA 6 se CIERRA o PIERDES progreso? Cómo evitarlo en PS5 y Xbox | Lun 23/11 · 18:00 |
+| 2026-11-23 | s07-cuando-sale-online | ¿Cuándo sale GTA 6 ONLINE? 🌐 #Shorts | Lun 23/11 · 21:00 |
