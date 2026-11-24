@@ -319,6 +319,8 @@ def tex(name):
         a = np.zeros((16, 16, 3), np.int64) + np.array((180, 236, 240))
         a[0, :] = (240, 255, 255); a[:, 0] = (240, 255, 255); a[15, :] = (120, 190, 200); a[:, 15] = (120, 190, 200)
         a[3:13, 3:13] = (60, 200, 210); a[5:11, 5:11] = (150, 250, 250); a[7:9, 7:9] = (255, 255, 255)
+    elif name == "sculk":
+        a = _specks(_noise(rng, (14, 34, 42), 6), rng, [(30, 120, 130), (60, 200, 210), (10, 24, 30)], 26)
     elif name == "sand": a = _specks(_noise(rng, (222, 210, 160), 8), rng, [(204, 190, 140), (236, 226, 182)], 30)
     elif name == "crystal":
         a = _noise(rng, (110, 220, 255), 14)
@@ -574,6 +576,10 @@ SPRITE_MAPS = {
                    dict(k=(50, 60, 90), w=(230, 240, 255), c=(150, 190, 230))),
     "ominous_bottle": (["...kkk...", "...kck...", "...kgk...", "..kgggk..", ".kpwppppk", "kppwppppk", "kpppppppk", "kpppppddk", ".kpppddk.", "..kkkkk.."],
                        dict(k=(20, 20, 26), c=(90, 70, 50), g=(170, 190, 200), w=(200, 230, 230), p=(50, 96, 100), d=(26, 52, 56))),
+    "apple_gold": (["....g...", "...gb...", ".yybyyy.", "ywyyyyyy", "ywyyyyyy", "yyyyyyyd", "yyyyyyyd", ".yyyydd.", "..y..d.."],
+                   dict(g=(70, 160, 50), b=(90, 60, 30), y=(250, 210, 60), w=(255, 250, 200), d=(190, 140, 20))),
+    "echo_shard": (["....w......", "...klk.....", "...klk..w..", ".w.klk.klk.", "klk.lmk.klk", "klk.lmk.lmk", "klmklmk.lmk", "klmklmkklmk", "klmklmkklmk", "kkkkkkkkkkk"],
+                   dict(k=(6, 30, 36), w=(140, 240, 240), l=(40, 150, 160), m=(16, 80, 90))),
     "hourglass": (["kkkkkkkkk", "kwwwwwwwk", ".kyyyyyk.", "..kyyyk..", "...kyk...", "...kyk...", "..kgygk..", ".kggyggk.", "kgyyyyygk", "kwwwwwwwk", "kkkkkkkkk"],
                   dict(k=(40, 26, 12), w=(150, 108, 60), y=(240, 200, 90), g=(200, 230, 255))),
     "map": (["kkkkkkkkkk", "kppppppppk", "kpggpbbppk", "kpgggpbbpk", "kppgpppbpk", "kpbbppggpk", "kppbbpgppk", "kppppppppk", "kkkkkkkkkk"],
