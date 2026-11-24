@@ -17,3 +17,5 @@
 | 2026-11-22 | s06-cuanto-dura | ¿Cuánto DURA GTA 6? ⏱️ #Shorts | Dom 22/11 · 21:00 |
 | 2026-11-23 | e07-cierres-y-progreso | ¿GTA 6 se CIERRA o PIERDES progreso? Cómo evitarlo en PS5 y Xbox | Lun 23/11 · 18:00 |
 | 2026-11-23 | s07-cuando-sale-online | ¿Cuándo sale GTA 6 ONLINE? 🌐 #Shorts | Lun 23/11 · 21:00 |
+| 2026-11-24 | e08-primer-parche | PRIMER PARCHE de GTA 6 (01.002.002): todo lo que ARREGLA | Mar 24/11 · 18:00 |
+| 2026-11-24 | s08-atascado-llamada | ¿ATASCADO en GTA 6 esperando una LLAMADA? 📞 #Shorts | Mar 24/11 · 21:00 |
