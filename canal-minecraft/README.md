@@ -25,6 +25,8 @@ Vídeo vertical de 1080x1920 que dura menos de 60 s. El diseño respeta las zona
 | 016 | 24/11 19:00 | La HISTORIA de Minecraft en 40 segundos 📜 | 40 s |
 | 017 | 25/11 14:00 | Cómo entrar en una CIUDAD ANTIGUA sin despertar al WARDEN 🤫 | 43 s |
 | 018 | 25/11 19:00 | 5 trucos de SUPERVIVENCIA que nadie te contó 🛡️ | 32 s |
+| 019 | 26/11 14:00 | THE DEEP FREEZE ya está CERCA: sale la Pre-Release 1 🧊 | 38 s |
+| 020 | 26/11 19:00 | Cómo encontrar CHUNKS DE SLIME en Minecraft (Java y Bedrock) 🟢 | 36 s |
 
 - `shorts/NNN-....mp4`: el Short listo para subir.
 - `shorts/metadatos/NNN-....txt`: título (con #shorts), descripción, etiquetas y hora de publicación.

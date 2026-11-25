@@ -580,6 +580,8 @@ SPRITE_MAPS = {
                    dict(g=(70, 160, 50), b=(90, 60, 30), y=(250, 210, 60), w=(255, 250, 200), d=(190, 140, 20))),
     "echo_shard": (["....w......", "...klk.....", "...klk..w..", ".w.klk.klk.", "klk.lmk.klk", "klk.lmk.lmk", "klmklmk.lmk", "klmklmkklmk", "klmklmkklmk", "kkkkkkkkkkk"],
                    dict(k=(6, 30, 36), w=(140, 240, 240), l=(40, 150, 160), m=(16, 80, 90))),
+    "slimeball": ([".kkkk.", "kwllmk", "klmmmk", "kmmmdk", "kmmddk", ".kkkk."],
+                  dict(k=(30, 80, 20), w=(220, 255, 200), l=(150, 230, 120), m=(100, 200, 80), d=(60, 150, 50))),
     "hourglass": (["kkkkkkkkk", "kwwwwwwwk", ".kyyyyyk.", "..kyyyk..", "...kyk...", "...kyk...", "..kgygk..", ".kggyggk.", "kgyyyyygk", "kwwwwwwwk", "kkkkkkkkk"],
                   dict(k=(40, 26, 12), w=(150, 108, 60), y=(240, 200, 90), g=(200, 230, 255))),
     "map": (["kkkkkkkkkk", "kppppppppk", "kpggpbbppk", "kpgggpbbpk", "kppgpppbpk", "kpbbppggpk", "kppbbpgppk", "kppppppppk", "kkkkkkkkkk"],

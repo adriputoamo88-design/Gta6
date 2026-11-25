@@ -24,11 +24,12 @@ Marca con `[x]` lo publicado y pon el número del vídeo.
 - [x] 016 · La historia de Minecraft en 40 segundos (Short, 24/11/2026)
 - [x] 017 · Cómo entrar en una ciudad antigua sin despertar al Warden (Short, 25/11/2026)
 - [x] 018 · 5 trucos de supervivencia que nadie te contó (Short, 25/11/2026)
+- [x] 019 · Noticia: sale la Pre-Release 1 de The Deep Freeze (Short, 26/11/2026)
+- [x] 020 · Cómo encontrar chunks de slime (Java y Bedrock) (Short, 26/11/2026)
 
 ## Próximos (en orden de prioridad)
 ### Guías con muchas búsquedas
 - [ ] Granja de cultivos automática con aldeanos (comprobar bien cómo se recogen los cultivos en Java y en Bedrock antes de hacerla)
-- [ ] Cómo encontrar chunks de slime
 - [ ] Comercio con piglins: qué dan por oro
 - [ ] Cómo conseguir un Ghast feliz y volar con él
 - [ ] Cómo hacer un gólem de cobre y para qué sirve
