@@ -27,6 +27,8 @@ Vídeo vertical de 1080x1920 que dura menos de 60 s. El diseño respeta las zona
 | 018 | 25/11 19:00 | 5 trucos de SUPERVIVENCIA que nadie te contó 🛡️ | 32 s |
 | 019 | 26/11 14:00 | THE DEEP FREEZE ya está CERCA: sale la Pre-Release 1 🧊 | 38 s |
 | 020 | 26/11 19:00 | Cómo encontrar CHUNKS DE SLIME en Minecraft (Java y Bedrock) 🟢 | 36 s |
+| 021 | 27/11 14:00 | Qué te dan los PIGLINS a cambio de ORO 🟡 | 39 s |
+| 022 | 27/11 19:00 | Tu PRIMERA NOCHE en Minecraft: qué hacer en 10 minutos 🌙 | 33 s |
 
 - `shorts/NNN-....mp4`: el Short listo para subir.
 - `shorts/metadatos/NNN-....txt`: título (con #shorts), descripción, etiquetas y hora de publicación.

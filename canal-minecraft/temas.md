@@ -26,16 +26,16 @@ Marca con `[x]` lo publicado y pon el número del vídeo.
 - [x] 018 · 5 trucos de supervivencia que nadie te contó (Short, 25/11/2026)
 - [x] 019 · Noticia: sale la Pre-Release 1 de The Deep Freeze (Short, 26/11/2026)
 - [x] 020 · Cómo encontrar chunks de slime (Java y Bedrock) (Short, 26/11/2026)
+- [x] 021 · Qué te dan los piglins a cambio de oro (Short, 27/11/2026)
+- [x] 022 · Tu primera noche: qué hacer en los primeros 10 minutos (Short, 27/11/2026)
 
 ## Próximos (en orden de prioridad)
 ### Guías con muchas búsquedas
 - [ ] Granja de cultivos automática con aldeanos (comprobar bien cómo se recogen los cultivos en Java y en Bedrock antes de hacerla)
-- [ ] Comercio con piglins: qué dan por oro
 - [ ] Cómo conseguir un Ghast feliz y volar con él
 - [ ] Cómo hacer un gólem de cobre y para qué sirve
 
 ### Supervivencia y principiantes
-- [ ] Tu primera noche: qué hacer en los primeros 10 minutos
 - [ ] 10 errores de principiante que te hacen perder el mundo
 - [ ] Cómo domesticar todos los animales (lobos, gatos, caballos, loros…)
 - [ ] La mejor armadura y cómo encantarla
