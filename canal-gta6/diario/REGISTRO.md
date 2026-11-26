@@ -21,3 +21,5 @@
 | 2026-11-24 | s08-atascado-llamada | ¿ATASCADO en GTA 6 esperando una LLAMADA? 📞 #Shorts | Mar 24/11 · 21:00 |
 | 2026-11-25 | e09-concentracion-guia | CONCENTRACIÓN en GTA 6: cómo usar la CÁMARA LENTA (y mejorarla) | Mié 25/11 · 18:00 |
 | 2026-11-25 | s09-pc-no-descargues | ¿GTA 6 en PC? NO descargues ESO ⚠️ #Shorts | Mié 25/11 · 21:00 |
+| 2026-11-26 | e10-perder-policia | Cómo PERDER a la POLICÍA en GTA 6: el sistema de búsqueda explicado | Jue 26/11 · 18:00 |
+| 2026-11-26 | s10-ps5-pro-gta6 | La PS5 Pro de GTA 6 que NO puedes comprar 🎮 #Shorts | Jue 26/11 · 21:00 |
