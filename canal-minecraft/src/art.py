@@ -584,6 +584,8 @@ SPRITE_MAPS = {
                   dict(k=(30, 80, 20), w=(220, 255, 200), l=(150, 230, 120), m=(100, 200, 80), d=(60, 150, 50))),
     "chestplate_gold": (["kkkk....kkkk", "kllmkkkkmmdk", "klmmmllmmmdk", "kkmmmlmmmmkk", ".kmmmlmmmdk.", ".kmmmlmmmdk.", ".kmmmmmmmdk.", ".kmmmmmmmdk.", ".kkkkkkkkkk."],
                         dict(k=(110, 74, 10), l=(255, 246, 160), m=(250, 210, 60), d=(190, 140, 20))),
+    "harness": (["kkkkkkkkkkkk", "kllllllllllk", "kkgggkkgggkk", ".kgwgk.kgwgk", ".kgggk.kgggk", "..kkk...kkk."],
+                dict(k=(60, 36, 20), l=(150, 96, 56), g=(170, 220, 240), w=(255, 255, 255))),
     "hourglass": (["kkkkkkkkk", "kwwwwwwwk", ".kyyyyyk.", "..kyyyk..", "...kyk...", "...kyk...", "..kgygk..", ".kggyggk.", "kgyyyyygk", "kwwwwwwwk", "kkkkkkkkk"],
                   dict(k=(40, 26, 12), w=(150, 108, 60), y=(240, 200, 90), g=(200, 230, 255))),
     "map": (["kkkkkkkkkk", "kppppppppk", "kpggpbbppk", "kpgggpbbpk", "kppgpppbpk", "kpbbppggpk", "kppbbpgppk", "kppppppppk", "kkkkkkkkkk"],

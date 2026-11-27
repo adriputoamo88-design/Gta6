@@ -29,6 +29,8 @@ Vídeo vertical de 1080x1920 que dura menos de 60 s. El diseño respeta las zona
 | 020 | 26/11 19:00 | Cómo encontrar CHUNKS DE SLIME en Minecraft (Java y Bedrock) 🟢 | 36 s |
 | 021 | 27/11 14:00 | Qué te dan los PIGLINS a cambio de ORO 🟡 | 39 s |
 | 022 | 27/11 19:00 | Tu PRIMERA NOCHE en Minecraft: qué hacer en 10 minutos 🌙 | 33 s |
+| 023 | 28/11 14:00 | Cómo conseguir un GHAST FELIZ y volar en Minecraft ☁️ | 35 s |
+| 024 | 28/11 19:00 | 5 ERRORES de principiante en Minecraft (¿cuántos cometes?) ❌ | 33 s |
 
 - `shorts/NNN-....mp4`: el Short listo para subir.
 - `shorts/metadatos/NNN-....txt`: título (con #shorts), descripción, etiquetas y hora de publicación.
