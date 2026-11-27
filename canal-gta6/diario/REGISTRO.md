@@ -23,3 +23,5 @@
 | 2026-11-25 | s09-pc-no-descargues | ¿GTA 6 en PC? NO descargues ESO ⚠️ #Shorts | Mié 25/11 · 21:00 |
 | 2026-11-26 | e10-perder-policia | Cómo PERDER a la POLICÍA en GTA 6: el sistema de búsqueda explicado | Jue 26/11 · 18:00 |
 | 2026-11-26 | s10-ps5-pro-gta6 | La PS5 Pro de GTA 6 que NO puedes comprar 🎮 #Shorts | Jue 26/11 · 21:00 |
+| 2026-11-27 | e11-comprar-casas | ¿Se pueden COMPRAR CASAS en GTA 6? Propiedades, garajes y negocios | Vie 27/11 · 18:00 |
+| 2026-11-27 | s11-black-friday | ¿GTA 6 REBAJADO en Black Friday? 🏷️ #Shorts | Vie 27/11 · 21:00 |

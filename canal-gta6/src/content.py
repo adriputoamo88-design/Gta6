@@ -330,4 +330,5 @@ PRON = [
  ("Take-Two", "Téik Tu"),
  ("L3", "ele tres"), ("R3", "erre tres"), ("LS", "ele ese"), ("RS", "erre ese"),
  ("Miami Heat", "Miámi Jit"),
+ ("Black Friday", "Black Fráidei"), ("Microsoft Store", "Máicrosoft Estor"),
 ]
