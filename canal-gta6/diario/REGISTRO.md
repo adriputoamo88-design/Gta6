@@ -25,3 +25,5 @@
 | 2026-11-26 | s10-ps5-pro-gta6 | La PS5 Pro de GTA 6 que NO puedes comprar 🎮 #Shorts | Jue 26/11 · 21:00 |
 | 2026-11-27 | e11-comprar-casas | ¿Se pueden COMPRAR CASAS en GTA 6? Propiedades, garajes y negocios | Vie 27/11 · 18:00 |
 | 2026-11-27 | s11-black-friday | ¿GTA 6 REBAJADO en Black Friday? 🏷️ #Shorts | Vie 27/11 · 21:00 |
+| 2026-11-28 | e12-que-hacer-ademas-historia | QUÉ HACER en GTA 6 además de la HISTORIA: actividades para el finde | Sáb 28/11 · 12:00 |
+| 2026-11-28 | s12-giro-sin-spoilers | Rockstar REZÓ para que no se filtrara ESTE giro 🤫 (sin spoilers) #Shorts | Sáb 28/11 · 20:00 |

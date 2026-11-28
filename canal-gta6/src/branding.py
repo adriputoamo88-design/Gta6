@@ -38,11 +38,13 @@ def thumb(v):
     lines = t["big"].split("\n"); size = 210 if len(lines) == 1 else 175
     while True:
         imgs = [text_img(l, ANTON, size, fill=(255, 255, 255), stroke=10, stroke_fill=(10, 5, 20), glow=th["acc"], glow_r=18) for l in lines]
-        step = int(size * 1.02); hh = step * (len(imgs) - 1) + imgs[-1].height
+        ys = [0]
+        for li in imgs[:-1]: ys.append(ys[-1] + li.height - 34)
+        hh = ys[-1] + imgs[-1].height
         if max(i.width for i in imgs) <= 780 and hh <= 430: break
         size = int(size * 0.94)
     big = Image.new("RGBA", (max(i.width for i in imgs), hh), (0, 0, 0, 0))
-    for k, li in enumerate(imgs): big.alpha_composite(li, (0, k * step))
+    for k, li in enumerate(imgs): big.alpha_composite(li, (0, ys[k]))
     im.alpha_composite(big, (22, y - 6))
     tag = text_img(t["tag"], MB, 54, fill=(10, 5, 20), max_w=640, spacing=0.0)
     box = rrect(tag.width + 44, tag.height + 26, 16, th["acc"] + (255,)); box.alpha_composite(tag, (22, 13))
