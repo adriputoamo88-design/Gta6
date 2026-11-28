@@ -37,12 +37,26 @@ Marca con `[x]` lo publicado y pon el número del vídeo.
 ### Guías con muchas búsquedas
 - [ ] Granja de cultivos automática con aldeanos (comprobar bien cómo se recogen los cultivos en Java y en Bedrock antes de hacerla)
 
+- [ ] Cómo hacer un portal del Nether sin pico de diamante (obsidiana con lava y agua)
+- [ ] Cómo encontrar un templo del desierto y no caer en la trampa de dinamita
+- [ ] Cómo conseguir un tridente (ahogados) y sus encantamientos
+- [ ] Incursiones: cómo ganarlas y qué premios dan
+- [ ] Cómo encontrar un monumento oceánico y qué hay dentro
+- [ ] Cómo hacer un conducto (conduit) y para qué sirve
+- [ ] Cómo encontrar una mansión del bosque
+
 ### Supervivencia y principiantes
 - [ ] La mejor armadura y cómo encantarla
 - [ ] Cajas de shulker: cómo conseguirlas y por qué cambian el juego
 - [ ] Cómo sobrevivir en hardcore: 10 reglas
 
+- [ ] Cómo proteger tu casa de los creepers
+- [ ] Cómo conseguir manzanas de oro (normales y encantadas)
+
 ### Curiosidades (buenas para el segundo vídeo del día)
+- [ ] 5 bloques que casi nadie usa (y son muy útiles)
+- [ ] Mitos de Minecraft: ¿verdad o mentira?
+- [ ] Los mobs más raros de encontrar
 - [ ] Los mobs más peligrosos, del menos al más letal
 - [ ] Java vs Bedrock: todas las diferencias que importan
 - [ ] Los comandos más útiles para mundos de un jugador
