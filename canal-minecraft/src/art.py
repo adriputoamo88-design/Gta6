@@ -321,6 +321,8 @@ def tex(name):
         a[3:13, 3:13] = (60, 200, 210); a[5:11, 5:11] = (150, 250, 250); a[7:9, 7:9] = (255, 255, 255)
     elif name == "sculk":
         a = _specks(_noise(rng, (14, 34, 42), 6), rng, [(30, 120, 130), (60, 200, 210), (10, 24, 30)], 26)
+    elif name == "oxidized_copper":
+        a = _specks(_noise(rng, (82, 162, 132), 8), rng, [(110, 190, 160), (60, 130, 104), (96, 176, 146)], 30)
     elif name == "sand": a = _specks(_noise(rng, (222, 210, 160), 8), rng, [(204, 190, 140), (236, 226, 182)], 30)
     elif name == "crystal":
         a = _noise(rng, (110, 220, 255), 14)
@@ -586,6 +588,14 @@ SPRITE_MAPS = {
                         dict(k=(110, 74, 10), l=(255, 246, 160), m=(250, 210, 60), d=(190, 140, 20))),
     "harness": (["kkkkkkkkkkkk", "kllllllllllk", "kkgggkkgggkk", ".kgwgk.kgwgk", ".kgggk.kgggk", "..kkk...kkk."],
                 dict(k=(60, 36, 20), l=(150, 96, 56), g=(170, 220, 240), w=(255, 255, 255))),
+    "bone": ([".kk....kk.", "kwwk..kwwk", ".kwwwwwwk.", "kwwk..kwwk", ".kk....kk."],
+             dict(k=(90, 80, 70), w=(240, 236, 220))),
+    "fish": (["..kkkkk..k", ".kllllllkk", "kwlllllllk", ".kllllllkk", "..kkkkk..k"],
+             dict(k=(90, 70, 40), l=(200, 170, 120), w=(30, 30, 30))),
+    "seeds": ([".g...g.", "gyg.gyg", ".g...g.", "...g...", "..gyg..", "...g..."],
+              dict(g=(90, 150, 50), y=(200, 220, 120))),
+    "honeycomb": (["..kkkk..", ".kyyyyk.", "kyyoyyyk", "kyoyyoyk", "kyyyoyyk", ".kyyyyk.", "..kkkk.."],
+                  dict(k=(120, 70, 10), y=(250, 190, 40), o=(220, 140, 20))),
     "hourglass": (["kkkkkkkkk", "kwwwwwwwk", ".kyyyyyk.", "..kyyyk..", "...kyk...", "...kyk...", "..kgygk..", ".kggyggk.", "kgyyyyygk", "kwwwwwwwk", "kkkkkkkkk"],
                   dict(k=(40, 26, 12), w=(150, 108, 60), y=(240, 200, 90), g=(200, 230, 255))),
     "map": (["kkkkkkkkkk", "kppppppppk", "kpggpbbppk", "kpgggpbbpk", "kppgpppbpk", "kpbbppggpk", "kppbbpgppk", "kppppppppk", "kkkkkkkkkk"],
